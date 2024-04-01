@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "key": "guia",
+      "title": "Guias",
+      "defaultOpen": true,
+      "keywords": "guia, primeiros passos, início, vhsysui",
+      "routes": [
+        {
+          "key": "Boilerplates",
+          "title": "Instalação",
+          "keywords": "introdução, instalação, início, vhsysui",
+          "path": "/docs/guide/installation.mdx"
+        }
+      ]
+    },
+    {
+      "key": "Boilerplate",
+      "title": "Boilerplate",
+      "defaultOpen": true,
+      "keywords": "guia, primeiros passos, início, vhsysui",
+      "routes": [
+        {
+          "key": "Introdução",
+          "title": "Introdução",
+          "keywords": "introdução, instalação, início, vhsysui",
+          "path": "/docs/guide/installation.mdx"
+        }
+      ]
+    },
+    {
+      "key": "componentes",
+      "title": "Componentes",
+      "keywords": "elementos de interface, componentes interativos, componentes de UI, widgets",
+      "defaultOpen": true,
+      "routes": [
+        {
+          "key": "accordion",
+          "title": "Accordion",
+          "keywords": "accordion, collapse, expandable sections, content hiding, acordeão, colapso, seções expansíveis, ocultação de conteúdo",
+          "path": "/docs/components/accordion.mdx"
+        },
+        {
+          "key": "input",
+          "title": "Input",
+          "keywords": "in put, text box, form field, data entry",
+          "path": "/docs/components/input.mdx"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "name": "@vhsys-ui/table",
+  "version": "2.0.28",
+  "description": "Tables are used to display tabular data using rows and columns. ",
+  "keywords": [
+    "table"
+  ],
+
+  "homepage": "https://vhsys.com.br",
+
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "git@git.vhsys.com.br:front/frontend-core.git",
+    "directory": "packages/components/table"
+  },
+
+  "scripts": {
+    "build": "tsup src --dts",
+    "build:fast": "tsup src",
+    "dev": "pnpm build:fast --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "@vhsys-ui/theme": ">=2.1.0",
+    "@vhsys-ui/system": ">=2.0.0"
+  },
+  "dependencies": {
+    "@vhsys-ui/checkbox": "workspace:*",
+    "@vhsys-ui/react-utils": "workspace:*",
+    "@vhsys-ui/shared-icons": "workspace:*",
+    "@vhsys-ui/shared-utils": "workspace:*",
+    "@vhsys-ui/spacer": "workspace:*",
+    "@react-aria/focus": "^3.14.3",
+    "@react-aria/interactions": "^3.19.1",
+    "@react-aria/table": "^3.13.1",
+    "@react-aria/utils": "^3.21.1",
+    "@react-aria/visually-hidden": "^3.8.6",
+    "@react-stately/table": "^3.11.2",
+    "@react-stately/virtualizer": "^3.6.4",
+    "@react-types/grid": "^3.2.2",
+    "@react-types/table": "^3.9.0"
+  },
+  "devDependencies": {
+    "@vhsys-ui/theme": "workspace:*",
+    "@vhsys-ui/system": "workspace:*",
+    "@vhsys-ui/button": "workspace:*",
+    "@vhsys-ui/chip": "workspace:*",
+    "@vhsys-ui/pagination": "workspace:*",
+    "@vhsys-ui/spinner": "workspace:*",
+    "@vhsys-ui/tooltip": "workspace:*",
+    "@vhsys-ui/use-infinite-scroll": "workspace:*",
+    "@vhsys-ui/user": "workspace:*",
+    "@react-stately/data": "^3.10.3",
+    "clean-package": "2.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "swr": "^2.2.1"
+  },
+  "clean-package": "../../../clean-package.config.json"
+}

@@ -1,0 +1,60 @@
+{
+  "name": "@vhsys-ui/storybook",
+  "version": "2.0.0",
+  "description": "The VhsysUI react components storybook ",
+  "keywords": [
+    "storybook"
+  ],
+
+  "homepage": "https://vhsys.com.br",
+
+  "main": "src/index.ts",
+  "sideEffects": true,
+  "files": [
+    "dist"
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "git@git.vhsys.com.br:front/frontend-core.git",
+    "directory": "packages/components/storybook"
+  },
+
+  "scripts": {
+    "dev": "pnpm storybook dev -p 6006",
+    "build": "pnpm storybook build",
+    "start": "pnpm dlx http-server storybook-static"
+  },
+  "dependencies": {
+    "@vhsys-ui/react": "workspace:*",
+    "@vhsys-ui/system": "workspace:*",
+    "@vhsys-ui/theme": "workspace:*",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^7.4.6",
+    "@storybook/addon-actions": "^7.4.6",
+    "@storybook/addon-docs": "^7.4.6",
+    "@storybook/addon-essentials": "^7.4.6",
+    "@storybook/addon-links": "^7.4.6",
+    "@storybook/addon-mdx-gfm": "^7.4.6",
+    "@storybook/cli": "^7.4.6",
+    "@storybook/react": "^7.4.6",
+    "@storybook/react-vite": "^7.4.6",
+    "@storybook/theming": "^7.4.6",
+    "autoprefixer": "^10.4.13",
+    "storybook": "^7.4.6",
+    "storybook-dark-mode": "^3.0.1",
+    "tailwindcss": "^3.3.5",
+    "vite": "^4.4.7"
+  },
+  "tsup": {
+    "clean": true,
+    "target": "es2019",
+    "format": [
+      "cjs",
+      "esm"
+    ]
+  }
+}

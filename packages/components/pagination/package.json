@@ -1,0 +1,57 @@
+{
+  "name": "@vhsys-ui/pagination",
+  "version": "2.0.26",
+  "description": "The Pagination component allows you to display active page and navigate between multiple pages.",
+  "keywords": [
+    "pagination"
+  ],
+
+  "homepage": "https://vhsys.com.br",
+
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "git@git.vhsys.com.br:front/frontend-core.git",
+    "directory": "packages/components/pagination"
+  },
+
+  "scripts": {
+    "build": "tsup src --dts",
+    "dev": "pnpm build:fast --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "build:fast": "tsup src",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "@vhsys-ui/theme": ">=2.1.0",
+    "@vhsys-ui/system": ">=2.0.0"
+  },
+  "dependencies": {
+    "@vhsys-ui/shared-utils": "workspace:*",
+    "@vhsys-ui/react-utils": "workspace:*",
+    "@vhsys-ui/shared-icons": "workspace:*",
+    "@vhsys-ui/use-pagination": "workspace:*",
+    "@vhsys-ui/use-aria-press": "workspace:*",
+    "@react-aria/focus": "^3.14.3",
+    "@react-aria/interactions": "^3.19.1",
+    "@react-aria/utils": "^3.21.1",
+    "scroll-into-view-if-needed": "3.0.10"
+  },
+  "devDependencies": {
+    "@vhsys-ui/theme": "workspace:*",
+    "@vhsys-ui/system": "workspace:*",
+    "clean-package": "2.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "clean-package": "../../../clean-package.config.json"
+}

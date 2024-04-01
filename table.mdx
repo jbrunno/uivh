@@ -1,0 +1,383 @@
+---
+título: "Table"
+descrição: "Tables são usadas para exibir dados tabulares usando linhas e colunas. Elas permitem aos usuários escanear, ordenar, comparar e agir sobre grandes quantidades de dados rapidamente."
+
+---
+
+import {tableContent} from "@/content/components/table";
+
+# Table
+
+Tables são usadas para exibir dados tabulares usando linhas e colunas. Elas permitem aos usuários escanear, ordenar, comparar e agir sobre grandes quantidades de dados rapidamente.
+
+<ComponentLinks component="table" reactHook="useTable" />
+
+---
+
+## Importação
+
+VhsysUI exporta 6 componentes relacionados a Tables:
+
+- **Table**: O componente principal para exibir uma table.
+- **TableHeader**: O cabeçalho da table.
+- **TableBody**: O corpo da table.
+- **TableColumn**: A coluna da table.
+- **TableRow**: A linha da table.
+- **TableCell**: A célula da table.
+
+<ImportTabs
+  commands={{
+    main: `import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableColumn,
+  TableRow,
+  TableCell
+} from "@vhsysui/react";`,
+    individual: `import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableColumn,
+  TableRow,
+  TableCell
+} from "@vhsysui/table";`,
+  }}
+/>
+
+## Uso
+
+<CodeDemo title="Uso" files={tableContent.usage} />
+
+### Dinâmico
+
+Para renderizar uma Table dinamicamente, você pode usar a propriedade `columns` para passar as colunas e a propriedade `items` para passar os dados.
+
+<CodeDemo title="Dinâmico" files={tableContent.dynamic} />
+
+#### Por que não usar array map?
+
+Usar a propriedade `items` e fornecer uma função de renderização permite que [react-aria](https://react-spectrum.adobe.com/react-aria/index.html) armazene automaticamente os resultados da renderização de cada item e evite re-renderizar todos os itens na coleção quando apenas um deles muda. Isso tem grandes benefícios de desempenho para grandes coleções.
+
+Você também poderia usar `Array.map` para renderizar os itens, mas não será tão eficiente quanto usar as propriedades `items` e `columns`.
+
+Exemplo:
+
+```jsx
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@vhsysui/react";
+
+const rows = [...];
+
+const columns = [...];
+
+export default function App() {
+  return (
+    <Table aria-label="Exemplo de Table com conteúdo dinâmico">
+      <TableHeader>
+        {columns.map((column) =>
+          <TableColumn key={column.key}>{column.label}</TableColumn>
+        )}
+      </TableHeader>
+      <TableBody>
+        {rows.map((row) =>
+          <TableRow key={row.key}>
+            {(columnKey) => <TableCell>{getKeyValue(row, columnKey)}</TableCell>}
+          </TableRow>
+        )}
+      </TableBody>
+    </Table>
+  );
+}
+```
+
+> **Nota**: Para aprender mais sobre coleções do React Aria e como usá-las, por favor, consulte [Coleções do React Aria](https://react-spectrum.adobe.com/react-stately/collections.html).
+
+### Estado Vazio
+
+Você pode usar a propriedade `emptyContent` para renderizar um componente personalizado quando a Table estiver vazia.
+
+<CodeDemo title="Estado Vazio" highlightedLines="11" files={tableContent.empty} />
+
+### Sem Cabeçalho
+
+Caso você não queira renderizar o cabeçalho, você pode usar a propriedade `hideHeader`.
+
+<CodeDemo title="Sem Cabeçalho" files={tableContent.withoutHeader} />
+
+### Sem Embalagem
+
+Por padrão, a Table é envolvida em um elemento `div` com um pequeno efeito de sombra e um raio de borda. Você pode usar a propriedade `removeWrapper` para remover a embalagem e renderizar apenas a Table.
+
+<CodeDemo title="Sem Embalagem" files={tableContent.withoutWrapper} />
+
+### Células Personalizadas
+
+Você pode renderizar qualquer componente dentro da célula da Table. No exemplo abaixo, estamos renderizando componentes diferentes de acordo com a `key` da coluna.
+
+<CodeDemo title="Células Personalizadas" files={tableContent.customCells} />
+
+### Linhas Listradas
+
+Você pode usar a propriedade `isStriped` para renderizar linhas listradas.
+
+<CodeDemo title="Linhas Listradas" files={tableContent.striped} />
+
+### Seleção de Única Linha
+
+É possível tornar as linhas da Table selecionáveis. Para fazer isso, você pode usar a propriedade `selectionMode`. Use `defaultSelectedKeys` para fornecer um conjunto padrão de linhas selecionadas.
+
+<CodeDemo title="Seleção de Única Linha" files={tableContent.singleSelection} />
+
+> **Nota**: O valor das chaves selecionadas deve corresponder à propriedade key da linha.
+
+### Seleção de Múltiplas Linhas
+
+Você também pode selecionar várias linhas usando a propriedade `selectionMode="multiple"`. Use `defaultSelectedKeys` para fornecer um conjunto padrão de linhas selecionadas.
+
+<CodeDemo title="Seleção de Múltiplas Linhas" files={tableContent.multipleSelection} />
+
+> **Nota**: Ao usar a seleção múltipla, caixas de seleção serão renderizadas na primeira coluna da Table.
+
+### Desabilitar Seleção Vazia
+
+A Table também suporta a propriedade `disallowEmptySelection`, que obriga o usuário a ter pelo menos uma linha selecionada na Table o tempo todo. Nesse modo, se uma única linha estiver selecionada e o usuário pressioná-la, ela não será deselecionada.
+
+<CodeDemo title="Desabilitar Seleção Vazia" files={tableContent.disallowEmptySelection} />
+
+### Seleção Controlada
+
+Para controlar programaticamente a seleção de linhas, use a propriedade `selectedKeys` em conjunto com o callback `onSelectionChange`. A propriedade key das linhas selecionadas será passada para o callback quando a linha for pressionada, permitindo que você atualize o estado de acordo.
+
+<CodeDemo title="Seleção Controlada" files={tableContent.controlledSelection} />
+
+> **Nota**: A propriedade `selectedKeys` deve ser um objeto `Set`.
+
+### Linhas Desabilitadas
+
+Você pode desabilitar linhas usando a propriedade `disabledKeys`. Isso impedirá que as linhas sejam selecionáveis, conforme mostrado no exemplo abaixo.
+
+<CodeDemo title="Linhas Desabilitadas" files={tableContent.disabledRows} />
+
+### Comportamento da Seleção
+
+Por padrão, a Table usa o comportamento de seleção `toggle`, que se comporta como um grupo de caixas de seleção: clicar, tocar ou pressionar as teclas <Kbd>Espaço</Kbd> ou <Kbd>Enter</Kbd> alterna a seleção para a linha focada.
+
+Quando a propriedade `selectionBehavior` está definida como `replace`, clicar em uma linha com o mouse substitui a seleção apenas por essa linha. Usar as teclas de seta move tanto o foco quanto a seleção. Para selecionar várias linhas, podem ser usadas teclas modificadoras como <Kbd>Ctrl</Kbd>, <Kbd>Cmd</Kbd> e <Kbd>Shift</Kbd>.
+
+<CodeDemo title="Comportamento da Seleção" files={tableContent.selectionBehavior} />
+
+### Ações nas Linhas
+
+A Table suporta ações nas linhas por meio do callback `onRowAction`. No comportamento de seleção `toggle` padrão, quando nada está selecionado, clicar ou tocar na linha aciona a ação da linha.
+
+Este comportamento é ligeiramente diferente no comportamento de seleção `replace`, onde um único clique seleciona a linha e as ações são realizadas por meio de duplo clique.
+
+<CodeDemo title="Ações nas Linhas" files={tableContent.rowActions} />
+
+### Ordenação das Linhas
+
+A Table suporta a ordenação dos dados quando o cabeçalho de uma coluna é pressionado. Para designar que uma `Column` deve suportar ordenação, forneça a ela a propriedade `allowsSorting`.
+
+A Table aceita uma propriedade `sortDescriptor` que define a chave da coluna atual pela qual ordenar e a direção da ordenação (ascendente/descendente). Quando o usuário pressiona um cabeçalho de coluna ordenável, a chave da coluna e a direção da ordenação são passadas para o callback `onSortChange`, permitindo que você atualize o `sortDescriptor` apropriadamente.
+
+Recomendamos o uso do hook `useAsyncList` de [@react-stately/data](https://react-spectrum.adobe.com/react-stately/useAsyncList.html) para gerenciar a ordenação dos dados. Portanto, certifique-se de instalá-lo antes de usar o recurso de ordenação.
+
+```bash
+npm install @react-stately/data
+# ou
+yarn add @react-stately/data
+# ou
+pnpm add @react-stately/data
+```
+
+```jsx
+import {useAsyncList} from "@react-stately/data";
+```
+
+> Observe que passamos as propriedades `isLoading` e `loadingContent` para `TableBody` para renderizar um estado de carregamento enquanto os dados estão sendo buscados.
+
+### Carregando mais dados
+
+A Table permite adicionar um componente personalizado no final da table, no exemplo abaixo estamos usando um botão para carregar mais dados.
+
+> **Nota**: Passamos a propriedade `isHeaderSticky` para o componente `Table` para tornar o cabeçalho fixo.
+
+### Tabela Paginada
+
+Você pode usar o componente [Pagination](/components/pagination) para paginar a table.
+
+### Paginação Assíncrona
+
+Também é possível usar o componente [Pagination](/components/pagination) para paginar a table de forma assíncrona. Para buscar os dados, estamos usando o hook `useSWR` do [SWR](https://swr.vercel.app/docs/pagination).
+
+### Paginação Infinita
+
+A Table também suporta paginação infinita. Para fazer isso, você pode usar o hook `useAsyncList` de [@react-stately/data](https://react-spectrum.adobe.com/react-stately/useAsyncList.html) e o hook [@vhsysui/use-infinite-scroll](https://www.npmjs.com/package/@vhsysui/use-infinite-scroll).
+
+### Exemplo de Caso de Uso
+
+Ao criar uma Table, geralmente você precisa de funcionalidades básicas como ordenação, paginação e filtragem. No exemplo abaixo, combinamos todas essas funcionalidades para criar uma Table completa.
+
+## Slots
+
+- **base**: Define um layout de coluna flexível e posicionamento relativo para o componente da Table.
+- **wrapper**: Aplica-se ao invólucro mais externo, fornecendo preenchimento, layout flexível, posicionamento relativo, estilos visuais e tratamento de overflow rolável.
+- **table**: Define a Table para ter uma largura mínima total e altura autoajustável.
+- **thead**: Especifica cantos arredondados para a primeira linha filha no cabeçalho da Table.
+- **tbody**: Nenhum estilo específico é aplicado ao corpo da Table.
+- **tr**: Estilos para linhas da Table incluindo foco de grupo, propriedades de contorno e um conjunto de classes de foco-visível indefinidas.
+- **th**: Estilos para cabeçalhos da Table, incluindo preenchimento, alinhamento de texto, propriedades de fonte e estilos especiais para colunas ordenáveis.
+- **td**: Aplica-se a células da Table, com propriedades para preenchimento, alinhamento e posicionamento relativo, além de estilos especiais para elementos filhos primeiros, indicação de seleção e células desativadas.
+- **tfoot**: Nenhum estilo específico é aplicado ao rodapé da Table.
+- **sortIcon**: Estilos para ícones de ordenação, com propriedades para margem, opacidade e efeitos de transição baseados na direção de ordenação e estado de hover.
+- **emptyWrapper**: Define estilo para uma Table vazia, com alinhamento de texto, cor e uma altura especificada.
+- **loadingWrapper**: Estilo aplicado quando a Table está carregando, posicionando-o centralmente em seu contêiner.
+
+### Estilos Personalizados
+
+Você pode personalizar o componente `Table` passando classes CSS Tailwind personalizadas para os slots do componente.
+
+## Atributos de Dados
+
+`TableBody` possui os seguintes atributos:
+
+- **data-empty**:
+  Quando a Table está vazia.
+- **data-loading**:
+  Quando os dados da Table estão carregando. Baseado nas propriedades `isLoading` e `loadingContent` de `TableBody`.
+
+`TableRow` possui os seguintes atributos:
+
+- **data-selected**:
+  Quando a linha está selecionada. Baseado na propriedade `selectedKeys` de `Table`.
+- **data-disabled**:
+  Quando a linha está desativada. Baseado na propriedade `disabledKeys` de `Table`.
+- **data-hover**:
+  Quando a linha está sendo passada por cima. Baseado em [useHover](https://react-spectrum.adobe.com/react-aria/useHover.html).
+- **data-focus-visible**:
+  Quando a linha está sendo focada com o teclado. Baseado em [useFocusRing](https://react-spectrum.adobe.com/react-aria/useFocusRing.html).
+- **data-first**:
+  Quando a linha é a primeira linha.
+- **data-middle**:
+  Quando a linha está no meio.
+- **data-odd**:
+  Quando a linha é ímpar.
+- **data-last**:
+  Quando a linha é a última linha.
+
+`TableCell` possui os seguintes atributos:
+
+- **data-selected**:
+  Quando a célula da linha está selecionada. Baseado na propriedade `selectedKeys` de `Table`.
+- **data-focus-visible**:
+  Quando a célula está sendo focada com o teclado. Baseado em [useFocusRing](https://react-spectrum.adobe.com/react-aria/useFocusRing.html).
+
+  ## Acessibilidade
+
+- Exposta à tecnologia assistiva como uma grade usando ARIA.
+- Navegação por teclado entre colunas, linhas, células e elementos dentro das células focáveis através das teclas de seta.
+- Seleção de uma única linha, múltiplas linhas ou nenhuma linha através de interações com mouse, toque ou teclado.
+- Suporte para linhas desabilitadas, que não podem ser selecionadas.
+- Suporte para ordenação de colunas.
+- Suporte para carregamento assíncrono, rolagem infinita, filtragem e ordenação.
+- Suporte para comportamentos de seleção de alternância (toggle) e substituição (replace).
+- Suporte para rotulação visando acessibilidade.
+- Garante que as seleções sejam anunciadas usando uma região ARIA ao vivo.
+- Suporte para marcar colunas como cabeçalhos de linha, que serão lidos ao navegar pelas linhas com um leitor de tela.
+- Suporte opcional para caixas de seleção em cada linha para seleção, assim como no cabeçalho para selecionar todas as linhas.
+- Suporte para rolagem automática durante a navegação por teclado.
+- Suporte para ações em linhas através de duplo clique, tecla Enter ou toque.
+- Typeahead para permitir o foco em linhas digitando texto.
+- Pressão longa para entrar no modo de seleção em dispositivos touch quando há tanto seleção quanto ações em linhas.
+
+
+### Eventos da Table
+
+Os eventos da Table permitem interagir com as ações do usuário e com o estado da tabela. Aqui estão alguns eventos chave que você pode utilizar:
+
+| Evento                        | Tipo                                                                                                                                                   | Descrição                                                                                                               |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| onSortChange                  | `(sortDescriptor: SortDescriptor) => void`                                                                                                             | Chamado quando a ordenação muda, seja por clicar em um cabeçalho de coluna ordenável ou por meio de interação programática. Recebe o novo `sortDescriptor`. |
+| onSelectionChange             | `(selectedKeys: Set<Key>) => void`                                                                                                                     | Chamado quando a seleção dentro da Table muda, seja por interação do usuário ou por alterações programáticas. Recebe um `Set` contendo as chaves das linhas selecionadas. |
+| onRowAction                   | `(key: Key) => void`                                                                                                                                   | Chamado quando uma ação de linha é acionada, como um duplo clique ou pressionamento da tecla Enter em uma linha. Recebe a chave da linha acionada. |
+| onVisibleRectChange           | `(visibleRect: DOMRect) => void`                                                                                                                       | Chamado quando o retângulo visível da Table muda, como durante a rolagem. Recebe o novo `DOMRect` visível. |
+| onRowClick                    | `(key: Key, event: MouseEvent ｜ TouchEvent) => void`                                                                                                  | Chamado quando uma linha é clicada. Recebe a chave da linha clicada e o evento do mouse ou toque associado. |
+| onRowDoubleClick              | `(key: Key, event: MouseEvent ｜ TouchEvent) => void`                                                                                                  | Chamado quando uma linha recebe um duplo clique. Recebe a chave da linha clicada e o evento do mouse ou toque associado. |
+| onRowMouseEnter               | `(key: Key, event: MouseEvent) => void`                                                                                                                | Chamado quando o cursor do mouse entra em uma linha. Recebe a chave da linha e o evento do mouse. |
+| onRowMouseLeave               | `(key: Key, event: MouseEvent) => void`                                                                                                                | Chamado quando o cursor do mouse sai de uma linha. Recebe a chave da linha e o evento do mouse. |
+| onRowFocus                    | `(key: Key, event: FocusEvent) => void`                                                                                                                | Chamado quando uma linha é focada, tipicamente através de navegação por teclado. Recebe a chave da linha e o evento de foco. |
+| onRowBlur                     | `(key: Key, event: FocusEvent) => void`                                                                                                                | Chamado quando uma linha perde o foco. Recebe a chave da linha e o evento de desfocagem. |
+
+Esses eventos proporcionam controle detalhado sobre o comportamento da Table e permitem que você responda de maneira apropriada às interações dos usuários, melhorando a usabilidade e a acessibilidade da sua aplicação.
+
+Propriedades de TableHeader
+Atributo	Tipo	Descrição	Padrão
+children*	ReactNode[]	Uma lista de Column(s) ou uma função. Se for uma função, uma lista de colunas deve ser fornecida usando a propriedade columns	-
+columns	T[]	Uma lista de colunas da tabela.	-
+Propriedades de TableColumn
+Atributo	Tipo	Descrição	Padrão
+children*	ReactNode	Colunas filhas estáticas ou conteúdo para renderizar como o cabeçalho da coluna	-
+align	start | center | end	O alinhamento do conteúdo da coluna em relação à sua largura alocada	start
+hideHeader	boolean	Se a coluna deve ocultar seu texto de cabeçalho	false
+allowsSorting	boolean	Se a coluna permite ordenação	-
+isRowHeader	boolean	Se uma coluna é um cabeçalho de linha e deve ser anunciada pela tecnologia assistiva durante a navegação nas linhas	-
+textValue	string	Uma representação em string do conteúdo da coluna, usada para anúncios de acessibilidade	-
+width	string | number	A largura da coluna	-
+minWidth	string | number	A largura mínima da coluna	-
+maxWidth	string | number	A largura máxima da coluna	-
+Essas propriedades permitem uma configuração detalhada das colunas da tabela, incluindo alinhamento, ordenação, acessibilidade e dimensões, proporcionando flexibilidade para atender a uma ampla gama de necessidades de design e usabilidade.
+
+#### Propriedades do TableBody
+
+| Atributo       | Tipo                                                          | Descrição                                                                                              | Padrão |
+| -------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------- |
+| children\*     | `RowElement` \| `RowElement[]` \| `((item: T) => RowElement)` | Os conteúdos do corpo da tabela. Suporta itens estáticos ou uma função para renderização dinâmica     | -       |
+| items          | `Iterable<T>`                                                 | Uma lista de objetos de linha no corpo da tabela usados ao renderizar linhas dinamicamente            | -       |
+| isLoading      | `boolean`                                                     | Indica se o corpo da tabela está carregando.                                                          | -       |
+| loadingState   | [LoadingState](#loading-state)                                | Handler chamado quando mais itens devem ser carregados, por exemplo, ao rolar perto do final          | -       |
+| loadingContent | `ReactNode`                                                   | Conteúdo para exibir enquanto mais itens estão sendo carregados                                       | -       |
+| emptyContent   | `ReactNode`                                                   | Conteúdo para exibir quando não há itens no corpo da tabela                                            | -       |
+
+### Eventos do TableBody
+
+| Atributo   | Tipo        | Descrição                                                                         |
+| ---------- | ----------- | --------------------------------------------------------------------------------- |
+| onLoadMore | `() => any` | Chamado para carregar mais itens, como ao renderizar linhas dinamicamente no corpo da tabela |
+
+#### Propriedades do TableRow
+
+| Atributo   | Tipo                                               | Descrição                                                                   | Padrão |
+| ---------- | -------------------------------------------------- | --------------------------------------------------------------------------- | ------- |
+| children\* | `CellElement` \| `CellElement[]` \| `CellRenderer` | Conteúdo renderizado da linha ou itens filhos da linha                      | -       |
+| textValue  | `string`                                           | Uma representação em string do conteúdo da linha, usada para funcionalidades como typeahead | -       |
+
+#### Propriedades do TableCell
+
+| Atributo   | Tipo        | Descrição                                                                   | Padrão |
+| ---------- | ----------- | --------------------------------------------------------------------------- | ------- |
+| children\* | `ReactNode` | O conteúdo da célula                                                        | -       |
+| textValue  | `string`    | Uma representação em string do conteúdo da linha, usada para funcionalidades como typeahead | -       |
+
+### Tipos da Table
+
+#### Descritor de Ordenação
+
+```ts
+type SortDescriptor = {
+  column: React.Key;
+  direction: "ascending" | "descending";
+};
+```
+
+#### Seleção
+
+```ts
+type Selection = "all" | Set<React.Key>;
+```
+
+#### Estado de Carregamento
+
+```ts
+type LoadingState = "loading" | "sorting" | "loadingMore" | "error" | "idle" | "filtering";
+```

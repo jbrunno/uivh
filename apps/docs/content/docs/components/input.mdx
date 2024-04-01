@@ -1,0 +1,194 @@
+---
+title: "Input"
+description: "Input é um componente que permite aos usuários inserirem texto. Pode ser utilizado para obter entradas do usuário em formulários, campos de busca e mais."
+---
+
+import {inputContent} from "@/content/components/input";
+
+# Input
+
+Input é um componente que permite aos usuários inserirem texto. Pode ser utilizado para obter entradas do usuário em formulários, campos de busca e mais.
+
+<ComponentLinks component="input" reactAriaHook="useTextField" />
+
+---
+
+## Import
+
+<ImportTabs
+  commands={{
+    main: 'import {Input} from "@vhsys-ui/react";',
+    individual: 'import {Input} from "@vhsys-ui/input";',
+  }}
+/>
+
+## Usage
+
+<CodeDemo title="Usage" files={inputContent.usage} />
+
+### Disabled
+
+<CodeDemo title="Disabled" files={inputContent.disabled} />
+
+### Read Only
+
+<CodeDemo title="Read Only" files={inputContent.readOnly} />
+
+### Required
+
+Se você passar a propriedade `isRequired` para o input, ele terá um asterisco de `perigo` no final do rótulo e o input será obrigatório.
+
+<CodeDemo title="Required" files={inputContent.required} />
+
+### Sizes
+
+<CodeDemo title="Sizes" files={inputContent.sizes} />
+
+### Colors
+
+<CodeDemo title="Colors" files={inputContent.colors} />
+
+### Variants
+
+<CodeDemo title="Variants" files={inputContent.variants} />
+
+### Radius
+
+<CodeDemo title="Radius" files={inputContent.radius} />
+
+### Label Placements
+
+Você pode alterar a posição do label definindo a propriedade `labelPlacement` como `inside` (dentro), `outside` (fora) ou `outside-left` (fora à esquerda).
+
+<CodeDemo title="Label Placements" files={inputContent.labelPlacements} />
+
+> **Nota**: Se o `label` não for passado, a propriedade `labelPlacement` será `outside` por padrão.
+
+### Password Input
+
+Você pode usar a propriedade `type` para alterar o tipo de entrada para `password` (senha).
+
+<CodeDemo title="Password Input" highlightedLines="24" files={inputContent.password} />
+
+### Clear Button
+
+Se você passar a propriedade `isClearable` para o input, ele terá um botão de limpar no final do input, que será visível quando o input tiver um valor.
+
+<CodeDemo title="Clear Button" highlightedLines="6" files={inputContent.clearButton} />
+
+### Start & End Content
+
+Você pode usar as propriedades startContent e endContent para adicionar conteúdo ao início e ao fim do input, respectivamente.
+
+<CodeDemo title="Start and End Content" files={inputContent.startEndContent} />
+
+### With Description
+
+Você pode adicionar uma descrição ao input passando a propriedade description.
+
+<CodeDemo title="With Description" files={inputContent.description} />
+
+### With Error Message
+
+Você pode combinar as propriedades `isInvalid` e `errorMessage` para mostrar um input inválido.
+
+<CodeDemo title="With Error Message" files={inputContent.errorMessage} />
+
+Exemplo com validação de e-mail usando `regex`:
+
+<CodeDemo title="With Regex Validation" files={inputContent.regexValidation} />
+
+### Controlled
+
+Você pode usar as propriedades `value` e `onValueChange` para controlar o valor do input.
+
+<CodeDemo title="Controlled" files={inputContent.controlled} />
+
+> **Nota**: O `Input` do VhsysUI também suporta eventos nativos como `onChange`, úteis para bibliotecas de formulários como [Formik](https://formik.org/) e [React Hook Form](https://react-hook-form.com/).
+
+## Slots
+
+- **base**: Input wrapper, trata alinhamento, posicionamento e aparência geral.
+- **label**: Label do input, é o que é exibido acima, dentro ou à esquerda do input.
+- **mainWrapper**: Envolve o `inputWrapper` quando a posição é `outside` / `outside-left`.
+- **inputWrapper**: Envolve o `Label` (quando está dentro) e o `innerWrapper`.
+- **innerWrapper**: Envolve o `input`, o `startContent` e o `endContent`.
+- **input**: O elemento input.
+- **clearButton**: O botão de limpar, está no final do input.
+- **helperWrapper**: Envolve a `description` e a `errorMessage`.
+- **description**: A descrição do input.
+- **errorMessage**: A mensagem de erro do input.
+
+<Spacer y={4} />{" "}
+
+## Data Atributos
+
+  `Input` possui os seguintes atributos no elemento `base`:
+
+- **data-invalid**:
+  Quando o input é inválido. Baseado na propriedade `isInvalid`.
+- **data-required**:
+  Quando o input é obrigatório. Baseado na propriedade `isRequired`.
+- **data-readonly**:
+  Quando o input é somente leitura. Baseado na propriedade `isReadOnly`.
+- **data-hover**:
+  Quando o input está em hover. Baseado em [useHover](https://react-spectrum.adobe.com/react-aria/useHover.html).
+- **data-focus**:
+  Quando o input está sendo focus. Baseado em [useFocusRing](https://react-spectrum.adobe.com/react-aria/useFocusRing.html).
+- **data-focus-within**:
+  Quando o input está sendo focus ou algum de seus filhos. Baseado em [useFocusWithin](https://react-spectrum.adobe.com/react-aria/useFocusWithin.html).
+- **data-focus-visible**:
+  Quando o input está sendo focus com o teclado. Baseado em [useFocusRing](https://react-spectrum.adobe.com/react-aria/useFocusRing.html).
+- **data-disabled**:
+  Quando o input está desabilitado. Baseado na propriedade `isDisabled`.
+
+<Spacer y={4} />{" "}
+
+## Acessibilidade
+
+- Construído com um elemento `<input>` nativo.
+- Suporte visual e ARIA para rotulagem.
+- Suporte para eventos de mudança, área de transferência, composição, seleção e entrada.
+- Estados obrigatórios e inválidos expostos à tecnologia assistiva via ARIA.
+- Suporte para texto de ajuda de descrição e mensagem de erro vinculados ao input via ARIA.
+
+<Spacer y={4} />{" "}
+
+## API
+
+### Propriedades do Input
+
+| Atributo         | Tipo                                                                                                                                                                   | Descrição                                                                                                           | Padrão    |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------- |
+| children         | `ReactNode`                                                                                                                                                            | O conteúdo do input.                                                                                             | -         |
+| variant          | `flat` \| `bordered` \| `faded` \| `underlined`                                                                                                                        | A variante do input.                                                                                             | `flat`    |
+| color            | `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger`                                                                                            | A cor do input.                                                                                               | `default` |
+| size             | `sm` \| `md` \| `lg`                                                                                                                                                   | O tamanho do input.                                                                                                | `md`      |
+| radius           | `none` \| `sm` \| `md` \| `lg` \| `full`                                                                                                                               | O raio do input.                                                                                              | -         |
+| label            | `ReactNode`                                                                                                                                                            | O conteúdo a ser exibido como rótulo.                                                                                  | -         |
+| value            | `string`                                                                                                                                                               | O valor atual do input (controlado).                                                                          | -         |
+| defaultValue     | `string`                                                                                                                                                               | O valor padrão do input (não controlado).                                                                        | -         |
+| placeholder      | `string`                                                                                                                                                               | O espaço reservado do input.                                                                                         | -         |
+| description      | `ReactNode`                                                                                                                                                            | Uma descrição para o input. Fornece uma dica, como requisitos específicos sobre o que escolher.                        | -         |
+| errorMessage     | `ReactNode`                                                                                                                                                            | Uma mensagem de erro para o input.                                                                                       | -         |
+| startContent     | `ReactNode`                                                                                                                                                            | Elemento a ser renderizado no lado esquerdo do input.                                                                 | -         |
+| endContent       | `ReactNode`                                                                                                                                                            | Elemento a ser renderizado no lado direito do input.                                                                | -         |
+| labelPlacement   | `inside` \| `outside` \| `outside-left`                                                                                                                                | A posição do rótulo.                                                                                            | `inside`  |
+| fullWidth        | `boolean`                                                                                                                                                              | Se o input deve ocupar a largura de seu pai.                                                             | `true`    |
+| isClearable      | `boolean`                                                                                                                                                              | Se o input deve ter um botão de limpar.                                                                         | `false`   |
+| isRequired       | `boolean`                                                                                                                                                              | Se a entrada do usuário é necessária no input antes da submissão do formulário.                                                   | `false`   |
+| isReadOnly       | `boolean`                                                                                                                                                              | Se o input pode ser selecionado, mas não alterado pelo usuário.                                                        |           |
+| isDisabled       | `boolean`                                                                                                                                                              | Se o input está desativado.                                                                                        | `false`   |
+| isInvalid        | `boolean`                                                                                                                                                              | Se o input é inválido.                                                                                         | `false`   |
+| baseRef          | `RefObject<HTMLDivElement>`                                                                                                                                            | A referência ao elemento base.                                                                                          | -         |
+| validationState  | `valid` \| `invalid`                                                                                                                                                   | Se o input deve exibir sua estilização visual "válido" ou "inválido". (**Depreciado**) use **isInvalid** em vez disso. | -         |
+| disableAnimation | `boolean`                                                                                                                                                              | Se o input deve ser animado.                                                                                 | `false`   |
+| classNames       | `Record<"base"｜ "label"｜ "inputWrapper"｜ "innerWrapper"｜ "mainWrapper" ｜ "input" ｜ "clearButton" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string>` | Permite definir nomes de classes personalizados para os slots do input.                                                              | -         |
+
+### Eventos do Input
+
+| Atributo      | Tipo                                  | Descrição                                                                                                                          |
+| ------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| onChange      | `React.ChangeEvent<HTMLInputElement>` | Manipulador chamado quando o valor do elemento muda. Você pode obter o novo valor acessando `event.target.value` (string).       |
+| onValueChange | `(value: string) => void`             | Manipulador chamado quando o valor do elemento muda.                                                                                |
+| onClear       | `() => void`                          | Manipulador chamado quando o botão de limpar é clicado.                                                                           |

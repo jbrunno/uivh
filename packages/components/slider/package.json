@@ -1,0 +1,61 @@
+{
+  "name": "@vhsys-ui/slider",
+  "version": "2.2.5",
+  "description": "A slider allows a user to select one or more values within a range.",
+  "keywords": [
+    "slider"
+  ],
+
+  "homepage": "https://vhsys.com.br",
+
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "git@git.vhsys.com.br:front/frontend-core.git",
+    "directory": "packages/components/slider"
+  },
+
+  "scripts": {
+    "build": "tsup src --dts",
+    "build:fast": "tsup src",
+    "dev": "pnpm build:fast --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "@vhsys-ui/theme": ">=2.1.0",
+    "@vhsys-ui/system": ">=2.0.0"
+  },
+  "dependencies": {
+    "@vhsys-ui/shared-utils": "workspace:*",
+    "@vhsys-ui/react-utils": "workspace:*",
+    "@vhsys-ui/tooltip": "workspace:*",
+    "@vhsys-ui/use-aria-press": "workspace:*",
+    "@react-aria/focus": "^3.14.3",
+    "@react-aria/i18n": "^3.8.4",
+    "@react-aria/interactions": "^3.19.1",
+    "@react-aria/slider": "^3.7.2",
+    "@react-aria/utils": "^3.21.1",
+    "@react-aria/visually-hidden": "^3.8.6",
+    "@react-stately/slider": "^3.4.4"
+  },
+  "devDependencies": {
+    "@vhsys-ui/theme": "workspace:*",
+    "@vhsys-ui/system": "workspace:*",
+    "@vhsys-ui/shared-icons": "workspace:*",
+    "@vhsys-ui/test-utils": "workspace:*",
+    "clean-package": "2.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "clean-package": "../../../clean-package.config.json"
+}

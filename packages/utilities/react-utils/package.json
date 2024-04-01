@@ -1,0 +1,44 @@
+{
+  "name": "@vhsys-ui/react-utils",
+  "version": "2.0.10",
+  "description": "A set of utilities for react on client side",
+  "keywords": [
+    "react-utils"
+  ],
+
+  "homepage": "https://vhsys.com.br",
+
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "git@git.vhsys.com.br:front/frontend-core.git",
+    "directory": "packages/utilities/react-utils"
+  },
+
+  "scripts": {
+    "build": "tsup src --dts",
+    "build:fast": "tsup src",
+    "dev": "pnpm build:fast --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "dependencies": {
+    "@vhsys-ui/shared-utils": "workspace:*",
+    "@vhsys-ui/react-rsc-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0",
+    "react": "^18.0.0"
+  },
+  "clean-package": "../../../clean-package.config.json"
+}

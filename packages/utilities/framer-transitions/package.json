@@ -1,0 +1,48 @@
+{
+  "name": "@vhsys-ui/framer-transitions",
+  "version": "2.0.15",
+  "description": "A set of framer motion transitions for react",
+  "keywords": [
+    "framer-transitions"
+  ],
+
+  "homepage": "https://vhsys.com.br",
+
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "git@git.vhsys.com.br:front/frontend-core.git",
+    "directory": "packages/utilities/framer-transitions"
+  },
+
+  "scripts": {
+    "build": "tsup src --dts",
+    "build:fast": "tsup src",
+    "dev": "pnpm build:fast --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "framer-motion": ">=4.0.0"
+  },
+  "dependencies": {
+    "@vhsys-ui/system": "workspace:*",
+    "@vhsys-ui/shared-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "clean-package": "2.2.0",
+    "framer-motion": "^10.16.4"
+  },
+  "clean-package": "../../../clean-package.config.json"
+}
