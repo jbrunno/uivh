@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/radio",
-  "version": "2.0.25",
+  "version": "0.0.64",
   "description": "Radios allow users to select a single option from a list of mutually exclusive options.",
   "keywords": [
     "radio"

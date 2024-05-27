@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/use-pagination",
-  "version": "2.0.4",
+  "version": "0.0.64",
   "description": "State management hook for Pagination component, it lets you manage pagination with controlled and uncontrolled state",
   "keywords": [
     "use-pagination"

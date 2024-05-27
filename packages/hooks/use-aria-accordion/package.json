@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/use-aria-accordion",
-  "version": "2.0.2",
+  "version": "0.0.64",
   "description": "React-aria useAccordion hooks with custom implementations",
   "keywords": [
     "use-aria-accordion"

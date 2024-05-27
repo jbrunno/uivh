@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/table",
-  "version": "2.0.28",
+  "version": "0.0.64",
   "description": "Tables are used to display tabular data using rows and columns. ",
   "keywords": [
     "table"

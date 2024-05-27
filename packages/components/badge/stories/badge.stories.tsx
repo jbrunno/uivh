@@ -70,7 +70,7 @@ const Template = (args: BadgeProps) => (
     <Avatar
       isBordered={args.classNames?.badge?.includes("bottom")}
       radius={args.shape === "rectangle" ? "lg" : "full"}
-      src="https://i.pravatar.cc/300?u=a042581f4e29026709d"
+      src="https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no"
     />
   </Badge>
 );
@@ -78,10 +78,10 @@ const Template = (args: BadgeProps) => (
 const ShapesTemplate = (args: BadgeProps) => (
   <div className="flex gap-4 items-center">
     <Badge {...args} shape="rectangle">
-      <Avatar isBordered radius="lg" src="https://i.pravatar.cc/150?u=a042f81f4e29026024d" />
+      <Avatar isBordered radius="lg" src="https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no" />
     </Badge>
     <Badge {...args} shape="circle">
-      <Avatar isBordered radius="full" src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
+      <Avatar isBordered radius="full" src="https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no" />
     </Badge>
   </div>
 );

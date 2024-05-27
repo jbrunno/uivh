@@ -97,7 +97,7 @@ export const WithAvatar = {
     ...defaultProps,
     variant: "flat",
     color: "secondary",
-    avatar: <Avatar name="JW" src="https://i.pravatar.cc/300?u=a042581f4e29026709d" />,
+    avatar: <Avatar name="JW" src="https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no" />,
   },
 };
 

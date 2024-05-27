@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/theme",
-  "version": "2.1.17",
+  "version": "0.0.64",
   "description": "The default theme for VhsysUI components",
   "keywords": [
     "theme",

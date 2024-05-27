@@ -21,7 +21,7 @@ describe("Avatar", () => {
   it("should populate imgRef", () => {
     const imgRef = React.createRef<HTMLImageElement>();
     const wrapper = render(
-      <Avatar imgRef={imgRef} src="https://i.pravatar.cc/300?u=a042581f4e29026705d" />,
+      <Avatar imgRef={imgRef} src="https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no" />,
     );
 
     expect(imgRef.current).not.toBeNull();

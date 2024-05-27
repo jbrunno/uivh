@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/chip",
-  "version": "2.0.25",
+  "version": "0.0.64",
   "description": "Chips help people enter information, make selections, filter content, or trigger actions.",
   "keywords": [
     "chip"

@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/listbox",
-  "version": "2.1.16",
+  "version": "0.0.64",
   "description": "A listbox displays a list of options and allows a user to select one or more of them.",
   "keywords": [
     "listbox"

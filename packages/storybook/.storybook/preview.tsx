@@ -2,7 +2,6 @@ import React from "react";
 import {themes} from "@storybook/theming";
 import {VhsysUIProvider} from "@vhsys-ui/system/src/provider";
 import type {Preview} from "@storybook/react";
-
 import "./style.css";
 
 const decorators: Preview["decorators"] = [

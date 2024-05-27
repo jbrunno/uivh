@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/framer-transitions",
-  "version": "2.0.15",
+  "version": "0.0.64",
   "description": "A set of framer motion transitions for react",
   "keywords": [
     "framer-transitions"

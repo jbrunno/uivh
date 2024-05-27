@@ -1,12 +1,8 @@
 {
   "name": "vhsysui",
   "private": true,
-  "version": "2.0.0",
+  "version": "0.0.64",
 
-  "author": {
-    "name": "Junior Garcia",
-    "email": "jrgarciadev@gmail.com"
-  },
   "repository": {
     "type": "git",
     "url": "https://git@git.vhsys.com.br:front/frontend-core.git"

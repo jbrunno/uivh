@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/autocomplete",
-  "version": "2.0.9",
+  "version": "0.0.64",
   "description": "An autocomplete combines a text input with a listbox, allowing users to filter a list of options to items matching a query.",
   "keywords": [
     "autocomplete"

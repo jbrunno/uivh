@@ -7,13 +7,20 @@ import {User} from "../src";
 export default {
   title: "Components/User",
   component: User,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/proto/TNGKwzEFrJcVbfR40fJnyp/TicTac-Design-System?node-id=319-27201&t=aYFlXrsnPs432izc-1",
+    },
+  },
 } as Meta<typeof User>;
 
-const url = "https://avatars.githubusercontent.com/u/30373425?v=4";
+const url =
+  "https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no";
 
 export const Default = {
   args: {
-    name: "Junior Garcia",
+    name: "Amanda Ivoniak",
     avatarProps: {
       src: url,
     },
@@ -22,7 +29,7 @@ export const Default = {
 
 export const isFocusable = {
   args: {
-    name: "Junior Garcia",
+    name: "Amanda Ivoniak",
     isFocusable: true,
     avatarProps: {
       src: url,
@@ -32,9 +39,9 @@ export const isFocusable = {
 
 export const WithDefaultAvatar = {
   args: {
-    name: "Junior Garcia",
+    name: "Amanda Ivoniak",
     avatarProps: {
-      name: "Junior Garcia",
+      name: "Amanda Ivoniak",
       getInitials: (name) =>
         name
           .split(" ")
@@ -46,7 +53,7 @@ export const WithDefaultAvatar = {
 
 export const WithDescription = {
   args: {
-    name: "Junior Garcia",
+    name: "Amanda Ivoniak",
     description: "Software Engineer",
     avatarProps: {
       src: url,
@@ -56,10 +63,10 @@ export const WithDescription = {
 
 export const WithLinkDescription = {
   args: {
-    name: "Junior Garcia",
+    name: "Amanda Ivoniak",
     description: (
-      <Link href="https://twitter.com/jrgarciadev" size="sm">
-        @jrgarciadev
+      <Link href="#" size="sm">
+        @amandaivoniak
       </Link>
     ),
     avatarProps: {

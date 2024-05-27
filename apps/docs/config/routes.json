@@ -47,6 +47,20 @@
           "path": "/docs/components/input.mdx"
         }
       ]
+    },
+    {
+      "key": "variantes",
+      "title": "Variantes",
+      "defaultOpen": true,
+      "keywords": "variantes, vanriantes tailwind, vanriantes tailwind css, vhsysui",
+      "routes": [
+        {
+          "key": "Boilerplates",
+          "title": "Instalação",
+          "keywords": "introdução, instalação, início, vhsysui",
+          "path": "/docs/guide/installation.mdx"
+        }
+      ]
     }
   ]
 }

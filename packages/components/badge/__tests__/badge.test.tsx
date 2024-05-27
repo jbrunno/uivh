@@ -4,7 +4,7 @@ import {Avatar} from "@vhsys-ui/avatar";
 
 import {Badge} from "../src";
 
-const content = <Avatar src="https://i.pravatar.cc/300?u=a042581f4e29026709d" />;
+const content = <Avatar src="https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no" />;
 
 describe("Badge", () => {
   it("should render correctly", () => {

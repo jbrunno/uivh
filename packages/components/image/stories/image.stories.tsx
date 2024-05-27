@@ -114,7 +114,7 @@ export const AnimatedLoad = {
     ...defaultProps,
     width: 300,
     radius: "lg",
-    src: "https://app.requestly.io/delay/3000/https://images.unsplash.com/photo-1539571696357-5a69c17a67c6",
+    src: "https://app.requestly.io/delay/3000/https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no",
   },
 };
 
@@ -125,7 +125,7 @@ export const Fallback = {
     ...defaultProps,
     width: 300,
     radius: "lg",
-    src: "https://app.requestly.io/delay/3000/https://images.unsplash.com/photo-1539571696357-5a69c17a67c6",
+    src: "https://app.requestly.io/delay/3000/https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no",
     fallbackSrc: "/images/placeholder_300x450.png",
   },
 };
@@ -138,7 +138,7 @@ export const Skeleton = {
     width: 300,
     height: 450,
     radius: "lg",
-    src: "https://app.requestly.io/delay/3000/https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    src: "https://app.requestly.io/delay/3000/https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no",
     disableSkeleton: false,
   },
 };

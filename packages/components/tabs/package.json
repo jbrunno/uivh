@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/tabs",
-  "version": "2.0.26",
+  "version": "0.0.64",
   "description": "Tabs organize content into multiple sections and allow users to navigate between them.",
   "keywords": [
     "tabs"

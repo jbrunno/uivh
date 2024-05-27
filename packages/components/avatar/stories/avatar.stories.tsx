@@ -51,7 +51,7 @@ export const WithText = {
 export const IsDisabled = {
   args: {
     ...defaultProps,
-    src: "https://i.pravatar.cc/300?u=a042581f4e29026709d",
+    src: "https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no",
     color: "secondary",
     isBordered: true,
     isDisabled: true,
@@ -61,14 +61,14 @@ export const IsDisabled = {
 export const WithImage = {
   args: {
     ...defaultProps,
-    src: "https://i.pravatar.cc/300?u=a042581f4e29026705d",
+    src: "https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no",
   },
 };
 
 export const isBordered = {
   args: {
     ...defaultProps,
-    src: "https://i.pravatar.cc/300?u=a042581f4e29026709d",
+    src: "https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no",
     color: "secondary",
     isBordered: true,
   },
@@ -77,7 +77,7 @@ export const isBordered = {
 export const isFocusable = {
   args: {
     ...defaultProps,
-    src: "https://i.pravatar.cc/300?u=a042581f4e29026707d",
+    src: "https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no",
     isFocusable: true,
   },
 };
@@ -112,7 +112,7 @@ export const CustomSize = {
 export const CustomSizeImg = {
   args: {
     ...defaultProps,
-    src: "https://i.pravatar.cc/300?u=a042581f4e29026705d",
+    src: "https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no",
     name: "Junior",
     classNames: {
       base: "w-32 h-32 text-base",
@@ -132,7 +132,7 @@ export const DefaultIcon = {
 export const IconFallback = {
   args: {
     ...defaultProps,
-    src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    src: "https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no",
     showFallback: true,
   },
 };
@@ -140,7 +140,7 @@ export const IconFallback = {
 export const InitialsFallback = {
   args: {
     ...defaultProps,
-    src: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6",
+    src: "https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no",
     name: "Junior",
     showFallback: true,
   },

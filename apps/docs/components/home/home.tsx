@@ -2,10 +2,10 @@ import {Spacer} from "@vhsys-ui/react";
 
 import {sectionWrapper, titleWrapper, title, subtitle} from "../primitives";
 
-import {FeaturesGrid} from "@/components/marketing/features-grid";
-import {communityAccounts} from "@/libs/constants";
+import {FeaturesGrid} from "@/components/home/features-grid";
+import {homeCards} from "@/libs/constants";
 
-export const Community = () => {
+export const HomeLayout = () => {
   return (
     <section className={sectionWrapper({class: "flex flex-col items-center mt-16 lg:mt-44"})}>
       <div className="max-w-4xl flex flex-col gap-8">
@@ -19,7 +19,7 @@ export const Community = () => {
             className={subtitle({class: "md:w-full text-center flex justify-center items-center"})}
           >
             Bem vindo ao design system da Vhsys. Aqui você encontra a docuemntação e exemplos de uso
-            de todos os componentes do Vhsys UI.
+            de todos os componentes do vhsys.
           </p>
           <Spacer y={12} />
           <FeaturesGrid
@@ -28,7 +28,7 @@ export const Community = () => {
               iconWrapper: "bg-transparent",
               body: "pt-0",
             }}
-            features={communityAccounts}
+            features={homeCards}
           />
         </div>
       </div>

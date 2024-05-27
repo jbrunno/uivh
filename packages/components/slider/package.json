@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/slider",
-  "version": "2.2.5",
+  "version": "0.0.64",
   "description": "A slider allows a user to select one or more values within a range.",
   "keywords": [
     "slider"

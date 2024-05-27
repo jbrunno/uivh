@@ -12,19 +12,13 @@ import {
   Link,
   Button,
   Kbd,
-  Dropdown,
-  DropdownMenu,
-  DropdownItem,
-  DropdownTrigger,
 } from "@vhsys-ui/react";
 import {dataFocusVisibleClasses} from "@vhsys-ui/theme";
-import {ChevronDownIcon} from "@vhsys-ui/shared-icons";
 import {isAppleDevice} from "@react-aria/utils";
 import {clsx} from "@vhsys-ui/shared-utils";
 import NextLink from "next/link";
 import {usePathname} from "next/navigation";
 import {includes} from "lodash";
-import {motion, AnimatePresence} from "framer-motion";
 import {useEffect} from "react";
 import {usePress} from "@react-aria/interactions";
 import {useFocusRing} from "@react-aria/focus";
@@ -150,37 +144,7 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
             <SmallLogo className="w-6 h-6 md:hidden" />
             <LargeLogo className="h-5 md:h-6" />
           </NextLink>
-          {ref.current ? (
-            <Dropdown placement="bottom-start" portalContainer={ref.current}>
-              <AnimatePresence>
-                {isMounted && (
-                  <motion.div animate={{opacity: 1}} exit={{opacity: 0}} initial={{opacity: 0}}>
-                    <DropdownTrigger>
-                      <Button
-                        className="hidden text-xs h-6 w-[74px] py-1 min-w-fit sm:flex gap-0.5 bg-default-400/20 dark:bg-default-500/20"
-                        endContent={<ChevronDownIcon className="text-tiny" />}
-                        radius="full"
-                        size="sm"
-                        variant="flat"
-                      >
-                        v{currentVersion}
-                      </Button>
-                    </DropdownTrigger>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-              <DropdownMenu
-                aria-label="VhsysUI versions"
-                defaultSelectedKeys={["v2"]}
-                selectionMode="single"
-                onAction={handleVersionChange}
-              >
-                <DropdownItem key="v2">v{currentVersion}</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          ) : (
-            <div className="w-[74px]" />
-          )}
+          {ref.current ? <p>v{currentVersion}</p> : <div className="w-[74px]" />}
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start items-center">
           <NavbarItem>
@@ -242,6 +206,7 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchButton}</NavbarItem>
         <NavbarItem className="hidden md:flex" />
+        {ref.current ? <p>v{currentVersion}</p> : <div className="w-[74px]" />}
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="hidden sm:flex lg:hidden ml-4"

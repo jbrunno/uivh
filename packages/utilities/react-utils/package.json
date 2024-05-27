@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/react-utils",
-  "version": "2.0.10",
+  "version": "0.0.64",
   "description": "A set of utilities for react on client side",
   "keywords": [
     "react-utils"

@@ -38,7 +38,9 @@ describe("User", () => {
       <div>
         <User avatarProps={{name: "User"}} name="User" />
         <User
-          avatarProps={{src: "https://avatars.githubusercontent.com/u/30373425?v=4"}}
+          avatarProps={{
+            src: "https://lh3.googleusercontent.com/a-/ALV-UjWbW2Piga-2iOoCJVHoeFGm9o9F9N5N3QZBpOsiIf3BXiWRqpU=s88-w88-h88-c-k-no",
+          }}
           name="User test"
         />
       </div>,

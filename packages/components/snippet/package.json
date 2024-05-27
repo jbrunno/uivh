@@ -1,6 +1,6 @@
 {
   "name": "@vhsys-ui/snippet",
-  "version": "2.0.30",
+  "version": "0.0.64",
   "description": "Display a snippet of copyable code for the command line.",
   "keywords": [
     "snippet"
