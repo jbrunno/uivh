@@ -1,7 +1,7 @@
 import type {VariantProps} from "tailwind-variants";
 
 import {tv} from "../utils/tv";
-import {collapseAdjacentVariantBorders, colorVariants, dataFocusVisibleClasses} from "../utils";
+import {collapseAdjacentVariantBorders, buttonVariants, dataFocusVisibleClasses} from "../utils";
 
 /**
  * Button wrapper **Tailwind Variants** component
@@ -43,17 +43,11 @@ const button = tv({
   variants: {
     variant: {
       solid: "",
-      bordered: "border-medium bg-transparent",
-      light: "bg-transparent",
-      flat: "",
-      faded: "border-medium",
-      shadow: "",
-      ghost: "border-medium bg-transparent",
+      ghost: "bg-transparent",
     },
     size: {
-      sm: "px-unit-3 min-w-unit-16 h-unit-8 text-tiny gap-unit-2 rounded-small",
-      md: "px-unit-4 min-w-unit-20 h-unit-10 text-small gap-unit-2 rounded-medium",
-      lg: "px-unit-6 min-w-unit-24 h-unit-12 text-medium gap-unit-3 rounded-large",
+      sm: "px-unit-3 min-w-unit-16 h-unit-8 text-small gap-unit-2 rounded-lg",
+      md: "px-unit-4 min-w-unit-20 h-unit-10 text-small gap-unit-2 rounded-lg",
     },
     color: {
       default: "",
@@ -64,11 +58,9 @@ const button = tv({
       danger: "",
     },
     radius: {
-      none: "rounded-none",
-      sm: "rounded-small",
-      md: "rounded-medium",
-      lg: "rounded-large",
-      full: "rounded-full",
+      sm: "rounded",
+      md: "rounded-lg",
+      lg: "rounded-xl",
     },
     fullWidth: {
       true: "w-full",
@@ -92,7 +84,8 @@ const button = tv({
   defaultVariants: {
     size: "md",
     variant: "solid",
-    color: "default",
+    color: "secondary",
+    radius: "md",
     fullWidth: false,
     isDisabled: false,
     isInGroup: false,
@@ -103,218 +96,63 @@ const button = tv({
     {
       variant: "solid",
       color: "default",
-      class: colorVariants.solid.default,
+      class: buttonVariants.solid.default,
     },
     {
       variant: "solid",
       color: "primary",
-      class: colorVariants.solid.primary,
+      class: buttonVariants.solid.primary,
     },
     {
       variant: "solid",
       color: "secondary",
-      class: colorVariants.solid.secondary,
+      class: buttonVariants.solid.secondary,
     },
     {
       variant: "solid",
       color: "success",
-      class: colorVariants.solid.success,
+      class: buttonVariants.solid.success,
     },
     {
       variant: "solid",
       color: "warning",
-      class: colorVariants.solid.warning,
+      class: buttonVariants.solid.warning,
     },
     {
       variant: "solid",
       color: "danger",
-      class: colorVariants.solid.danger,
-    },
-    // shadow / color
-    {
-      variant: "shadow",
-      color: "default",
-      class: colorVariants.shadow.default,
-    },
-    {
-      variant: "shadow",
-      color: "primary",
-      class: colorVariants.shadow.primary,
-    },
-    {
-      variant: "shadow",
-      color: "secondary",
-      class: colorVariants.shadow.secondary,
-    },
-    {
-      variant: "shadow",
-      color: "success",
-      class: colorVariants.shadow.success,
-    },
-    {
-      variant: "shadow",
-      color: "warning",
-      class: colorVariants.shadow.warning,
-    },
-    {
-      variant: "shadow",
-      color: "danger",
-      class: colorVariants.shadow.danger,
-    },
-    // bordered / color
-    {
-      variant: "bordered",
-      color: "default",
-      class: colorVariants.bordered.default,
-    },
-    {
-      variant: "bordered",
-      color: "primary",
-      class: colorVariants.bordered.primary,
-    },
-    {
-      variant: "bordered",
-      color: "secondary",
-      class: colorVariants.bordered.secondary,
-    },
-    {
-      variant: "bordered",
-      color: "success",
-      class: colorVariants.bordered.success,
-    },
-    {
-      variant: "bordered",
-      color: "warning",
-      class: colorVariants.bordered.warning,
-    },
-    {
-      variant: "bordered",
-      color: "danger",
-      class: colorVariants.bordered.danger,
-    },
-    // flat / color
-    {
-      variant: "flat",
-      color: "default",
-      class: colorVariants.flat.default,
-    },
-    {
-      variant: "flat",
-      color: "primary",
-      class: colorVariants.flat.primary,
-    },
-    {
-      variant: "flat",
-      color: "secondary",
-      class: colorVariants.flat.secondary,
-    },
-    {
-      variant: "flat",
-      color: "success",
-      class: colorVariants.flat.success,
-    },
-    {
-      variant: "flat",
-      color: "warning",
-      class: colorVariants.flat.warning,
-    },
-    {
-      variant: "flat",
-      color: "danger",
-      class: colorVariants.flat.danger,
-    },
-    // faded / color
-    {
-      variant: "faded",
-      color: "default",
-      class: colorVariants.faded.default,
-    },
-    {
-      variant: "faded",
-      color: "primary",
-      class: colorVariants.faded.primary,
-    },
-    {
-      variant: "faded",
-      color: "secondary",
-      class: colorVariants.faded.secondary,
-    },
-    {
-      variant: "faded",
-      color: "success",
-      class: colorVariants.faded.success,
-    },
-    {
-      variant: "faded",
-      color: "warning",
-      class: colorVariants.faded.warning,
-    },
-    {
-      variant: "faded",
-      color: "danger",
-      class: colorVariants.faded.danger,
-    },
-    // light / color
-    {
-      variant: "light",
-      color: "default",
-      class: [colorVariants.light.default, "data-[hover=true]:bg-default/40"],
-    },
-    {
-      variant: "light",
-      color: "primary",
-      class: [colorVariants.light.primary, "data-[hover=true]:bg-primary/20"],
-    },
-    {
-      variant: "light",
-      color: "secondary",
-      class: [colorVariants.light.secondary, "data-[hover=true]:bg-secondary/20"],
-    },
-    {
-      variant: "light",
-      color: "success",
-      class: [colorVariants.light.success, "data-[hover=true]:bg-success/20"],
-    },
-    {
-      variant: "light",
-      color: "warning",
-      class: [colorVariants.light.warning, "data-[hover=true]:bg-warning/20"],
-    },
-    {
-      variant: "light",
-      color: "danger",
-      class: [colorVariants.light.danger, "data-[hover=true]:bg-danger/20"],
+      class: buttonVariants.solid.danger,
     },
     // ghost / color
     {
       variant: "ghost",
       color: "default",
-      class: colorVariants.ghost.default,
+      class: buttonVariants.ghost.default,
     },
     {
       variant: "ghost",
       color: "primary",
-      class: colorVariants.ghost.primary,
+      class: buttonVariants.ghost.primary,
     },
     {
       variant: "ghost",
       color: "secondary",
-      class: colorVariants.ghost.secondary,
+      class: buttonVariants.ghost.secondary,
     },
     {
       variant: "ghost",
       color: "success",
-      class: colorVariants.ghost.success,
+      class: buttonVariants.ghost.success,
     },
     {
       variant: "ghost",
       color: "warning",
-      class: colorVariants.ghost.warning,
+      class: buttonVariants.ghost.warning,
     },
     {
       variant: "ghost",
       color: "danger",
-      class: colorVariants.ghost.danger,
+      class: buttonVariants.ghost.danger,
     },
     // isInGroup / radius / size <-- radius not provided
     {
@@ -331,22 +169,7 @@ const button = tv({
       size: "md",
       class: "rounded-none first:rounded-s-medium last:rounded-e-medium",
     },
-    {
-      isInGroup: true,
-      size: "lg",
-      class: "rounded-none first:rounded-s-large last:rounded-e-large",
-    },
-    {
-      isInGroup: true,
-      isRounded: true,
-      class: "rounded-none first:rounded-s-full last:rounded-e-full",
-    },
     // isInGroup / radius <-- radius provided
-    {
-      isInGroup: true,
-      radius: "none",
-      class: "rounded-none first:rounded-s-none last:rounded-e-none",
-    },
     {
       isInGroup: true,
       radius: "sm",
@@ -362,45 +185,40 @@ const button = tv({
       radius: "lg",
       class: "rounded-none first:rounded-s-large last:rounded-e-large",
     },
+    // isInGroup / ghost
     {
       isInGroup: true,
-      radius: "full",
-      class: "rounded-none first:rounded-s-full last:rounded-e-full",
-    },
-    // isInGroup / bordered / ghost
-    {
-      isInGroup: true,
-      variant: ["ghost", "bordered"],
+      variant: ["ghost"],
       color: "default",
       className: collapseAdjacentVariantBorders.default,
     },
     {
       isInGroup: true,
-      variant: ["ghost", "bordered"],
+      variant: ["ghost"],
       color: "primary",
       className: collapseAdjacentVariantBorders.primary,
     },
     {
       isInGroup: true,
-      variant: ["ghost", "bordered"],
+      variant: ["ghost"],
       color: "secondary",
       className: collapseAdjacentVariantBorders.secondary,
     },
     {
       isInGroup: true,
-      variant: ["ghost", "bordered"],
+      variant: ["ghost"],
       color: "success",
       className: collapseAdjacentVariantBorders.success,
     },
     {
       isInGroup: true,
-      variant: ["ghost", "bordered"],
+      variant: ["ghost"],
       color: "warning",
       className: collapseAdjacentVariantBorders.warning,
     },
     {
       isInGroup: true,
-      variant: ["ghost", "bordered"],
+      variant: ["ghost"],
       color: "danger",
       className: collapseAdjacentVariantBorders.danger,
     },
@@ -414,15 +232,67 @@ const button = tv({
       size: "md",
       class: "min-w-unit-10 w-unit-10 h-unit-10",
     },
+    // variant  solid / hover
     {
-      isIconOnly: true,
-      size: "lg",
-      class: "min-w-unit-12 w-unit-12 h-unit-12",
+      variant: ["solid"],
+      color: "primary",
+      class: "data-[hover=true]:bg-primary-600",
     },
-    // variant / hover
     {
-      variant: ["solid", "faded", "flat", "bordered", "shadow"],
-      class: "data-[hover=true]:opacity-hover",
+      variant: ["solid"],
+      color: "secondary",
+      class: "data-[hover=true]:bg-secondary-600",
+    },
+    {
+      variant: ["solid"],
+      color: "success",
+      class: "data-[hover=true]:bg-success-600",
+    },
+    {
+      variant: ["solid"],
+      color: "warning",
+      class: "data-[hover=true]:bg-warning-600",
+    },
+    {
+      variant: ["solid"],
+      color: "danger",
+      class: "data-[hover=true]:bg-danger-600",
+    },
+    {
+      variant: ["solid"],
+      color: "default",
+      class: "data-[hover=true]:bg-secondary-400",
+    },
+    // variant / isDisabled
+    {
+      isDisabled: true,
+      color: "primary",
+      class: "bg-primary-100  text-default-foreground",
+    },
+    {
+      isDisabled: true,
+      color: "secondary",
+      class: "bg-secondary-100 text-default-foreground",
+    },
+    {
+      isDisabled: true,
+      color: "success",
+      class: "bg-success-100 text-default-foreground",
+    },
+    {
+      isDisabled: true,
+      color: "warning",
+      class: "bg-warning-100 text-default-foreground",
+    },
+    {
+      isDisabled: true,
+      color: "danger",
+      class: "bg-danger-100 text-default-foreground",
+    },
+    {
+      isDisabled: true,
+      color: "default",
+      class: "bg-gray-100 text-default-foreground",
     },
   ],
 });

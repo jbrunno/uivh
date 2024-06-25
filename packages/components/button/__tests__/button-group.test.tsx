@@ -41,14 +41,14 @@ describe("ButtonGroup", () => {
   it("should render different variants", () => {
     const wrapper = render(
       <ButtonGroup>
-        <Button variant="flat">button</Button>
-        <Button disableRipple color="warning" variant="light">
+        <Button variant="solid">button</Button>
+        <Button disableRipple color="warning" variant="ghost">
           light
         </Button>
-        <Button disableRipple color="success" variant="light">
+        <Button disableRipple color="success" variant="ghost">
           button
         </Button>
-        <Button disableRipple color="warning" variant="bordered">
+        <Button disableRipple color="warning" variant="solid">
           button
         </Button>
       </ButtonGroup>,

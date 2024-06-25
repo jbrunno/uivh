@@ -111,8 +111,8 @@ export const SandpackCodeViewer = React.forwardRef<any, CodeViewerProps>(
               })}
             >
               {/*
-               * Disabled in favor of Codeblock due to performance issues & font size on ios 
-               *   
+               * Disabled in favor of Codeblock due to performance issues & font size on ios
+               *
               <CodeEditor
                 key={internalKey}
                 ref={ref}
@@ -145,9 +145,9 @@ export const SandpackCodeViewer = React.forwardRef<any, CodeViewerProps>(
           >
             <Button
               className="bg-[#2a2838] shadow-md font-sans dark:bg-zinc-800 text-zinc-300 dark:text-zinc-400 hover:!text-zinc-200"
-              radius="full"
+              radius="lg"
               size="sm"
-              variant="flat"
+              variant="solid"
               onClick={handleExpand}
             >
               {isExpanded ? "Show less" : "Show more"}

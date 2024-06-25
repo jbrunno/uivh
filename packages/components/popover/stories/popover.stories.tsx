@@ -183,7 +183,7 @@ const PlacementsTemplate = (args: PopoverProps) => {
     <div className="inline-grid grid-cols-3 gap-4">
       <Popover {...args} placement="top-start">
         <PopoverTrigger>
-          <Button color={buttonColor} variant="flat">
+          <Button color={buttonColor} variant="solid">
             Top Start
           </Button>
         </PopoverTrigger>
@@ -192,7 +192,7 @@ const PlacementsTemplate = (args: PopoverProps) => {
 
       <Popover {...args}>
         <PopoverTrigger>
-          <Button color={buttonColor} variant="flat">
+          <Button color={buttonColor} variant="solid">
             Top
           </Button>
         </PopoverTrigger>
@@ -201,7 +201,7 @@ const PlacementsTemplate = (args: PopoverProps) => {
 
       <Popover {...args} placement="top-end">
         <PopoverTrigger>
-          <Button color={buttonColor} variant="flat">
+          <Button color={buttonColor} variant="solid">
             Top End
           </Button>
         </PopoverTrigger>
@@ -210,7 +210,7 @@ const PlacementsTemplate = (args: PopoverProps) => {
 
       <Popover {...args} placement="bottom-start">
         <PopoverTrigger>
-          <Button color={buttonColor} variant="flat">
+          <Button color={buttonColor} variant="solid">
             Bottom Start
           </Button>
         </PopoverTrigger>
@@ -219,7 +219,7 @@ const PlacementsTemplate = (args: PopoverProps) => {
 
       <Popover {...args} placement="bottom">
         <PopoverTrigger>
-          <Button color={buttonColor} variant="flat">
+          <Button color={buttonColor} variant="solid">
             Bottom
           </Button>
         </PopoverTrigger>
@@ -228,7 +228,7 @@ const PlacementsTemplate = (args: PopoverProps) => {
 
       <Popover {...args} placement="bottom-end">
         <PopoverTrigger>
-          <Button color={buttonColor} variant="flat">
+          <Button color={buttonColor} variant="solid">
             Bottom End
           </Button>
         </PopoverTrigger>
@@ -237,7 +237,7 @@ const PlacementsTemplate = (args: PopoverProps) => {
 
       <Popover {...args} placement="right-start">
         <PopoverTrigger>
-          <Button color={buttonColor} variant="flat">
+          <Button color={buttonColor} variant="solid">
             Right Start
           </Button>
         </PopoverTrigger>
@@ -246,7 +246,7 @@ const PlacementsTemplate = (args: PopoverProps) => {
 
       <Popover {...args} placement="right">
         <PopoverTrigger>
-          <Button color={buttonColor} variant="flat">
+          <Button color={buttonColor} variant="solid">
             Right
           </Button>
         </PopoverTrigger>
@@ -255,7 +255,7 @@ const PlacementsTemplate = (args: PopoverProps) => {
 
       <Popover {...args} placement="right-end">
         <PopoverTrigger>
-          <Button color={buttonColor} variant="flat">
+          <Button color={buttonColor} variant="solid">
             Right End
           </Button>
         </PopoverTrigger>
@@ -264,7 +264,7 @@ const PlacementsTemplate = (args: PopoverProps) => {
 
       <Popover {...args} placement="left-start">
         <PopoverTrigger>
-          <Button color={buttonColor} variant="flat">
+          <Button color={buttonColor} variant="solid">
             Left Start
           </Button>
         </PopoverTrigger>
@@ -273,7 +273,7 @@ const PlacementsTemplate = (args: PopoverProps) => {
 
       <Popover {...args} placement="left">
         <PopoverTrigger>
-          <Button color={buttonColor} variant="flat">
+          <Button color={buttonColor} variant="solid">
             Left
           </Button>
         </PopoverTrigger>
@@ -282,7 +282,7 @@ const PlacementsTemplate = (args: PopoverProps) => {
 
       <Popover {...args} placement="left-end">
         <PopoverTrigger>
-          <Button color={buttonColor} variant="flat">
+          <Button color={buttonColor} variant="solid">
             Left End
           </Button>
         </PopoverTrigger>
@@ -296,7 +296,7 @@ const OffsetTemplate = (args: PopoverProps) => (
   <div className="flex gap-2">
     <Popover {...args}>
       <PopoverTrigger>
-        <Button color="warning" variant="faded">
+        <Button color="warning" variant="solid">
           Default offset (7)
         </Button>
       </PopoverTrigger>
@@ -304,7 +304,7 @@ const OffsetTemplate = (args: PopoverProps) => (
     </Popover>
     <Popover {...args} offset={15}>
       <PopoverTrigger>
-        <Button color="warning" variant="faded">
+        <Button color="warning" variant="solid">
           15 offset
         </Button>
       </PopoverTrigger>
@@ -312,7 +312,7 @@ const OffsetTemplate = (args: PopoverProps) => (
     </Popover>
     <Popover {...args} offset={-7}>
       <PopoverTrigger>
-        <Button color="warning" variant="faded">
+        <Button color="warning" variant="solid">
           -7 offset
         </Button>
       </PopoverTrigger>
@@ -377,7 +377,7 @@ const BackdropsTemplate = (args: PopoverProps) => {
           backdrop={backdrop}
         >
           <PopoverTrigger>
-            <Button className="capitalize" color="warning" variant="flat">
+            <Button className="capitalize" color="warning" variant="solid">
               {backdrop}
             </Button>
           </PopoverTrigger>

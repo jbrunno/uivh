@@ -222,7 +222,7 @@ export function useSnippet(originalProps: UseSnippetProps) {
     "aria-label":
       typeof tooltipProps.content === "string" ? tooltipProps.content : "Copy to clipboard",
     size: "sm",
-    variant: "light",
+    variant: "ghost",
     isDisabled: disableCopy,
     onPress: onCopy,
     isIconOnly: true,

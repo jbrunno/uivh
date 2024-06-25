@@ -237,7 +237,7 @@ const WithDropdownEllipsisTemplate = (args: BreadcrumbsProps & {page: number}) =
       <div className="flex items-center">
         <Dropdown>
           <DropdownTrigger>
-            <Button isIconOnly className="min-w-unit-6 w-unit-6 h-unit-6" size="sm" variant="flat">
+            <Button isIconOnly className="min-w-unit-6 w-unit-6 h-unit-6" size="sm" variant="solid">
               {ellipsisIcon}
             </Button>
           </DropdownTrigger>
@@ -312,9 +312,9 @@ const WithDropdownItemTemplate = (args: BreadcrumbsProps & {page: number}) => {
             <Button
               className={clsx("h-6 pr-2", args.size && sizeMap[args.size])}
               endContent={<ChevronDownIcon className="text-default-500" />}
-              radius="full"
+              radius="lg"
               size="sm"
-              variant="light"
+              variant="ghost"
             >
               Songs
             </Button>

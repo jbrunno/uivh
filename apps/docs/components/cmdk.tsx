@@ -302,9 +302,9 @@ export const Cmdk: FC<{}> = () => {
             "border data-[hover=true]:bg-content2 border-default-400 dark:border-default-100",
             className,
           )}
-          radius="full"
+          radius="md"
           size="sm"
-          variant="bordered"
+          variant="solid"
           onPress={onPress}
         >
           <CloseIcon />

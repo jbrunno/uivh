@@ -555,7 +555,7 @@ const LoadMoreTemplate = (args: TableProps) => {
       bottomContent={
         hasMore ? (
           <div className="flex w-full justify-center">
-            <Button isDisabled={list.isLoading} variant="flat" onPress={list.loadMore}>
+            <Button isDisabled={list.isLoading} variant="solid" onPress={list.loadMore}>
               {list.isLoading && <Spinner color="white" size="sm" />}
               Load More
             </Button>

@@ -321,7 +321,7 @@ const WithStartContentTemplate = ({
   return (
     <Dropdown {...args} disableAnimation={disableAnimation}>
       <DropdownTrigger>
-        <Button color="secondary" disableAnimation={disableAnimation} variant="flat">
+        <Button color="secondary" disableAnimation={disableAnimation} variant="solid">
           Trigger
         </Button>
       </DropdownTrigger>
@@ -367,7 +367,7 @@ const WithEndContentTemplate = ({color, variant, disableAnimation, ...args}) => 
   return (
     <Dropdown {...args} disableAnimation={disableAnimation}>
       <DropdownTrigger>
-        <Button color="success" disableAnimation={disableAnimation} variant="faded">
+        <Button color="success" disableAnimation={disableAnimation} variant="solid">
           Trigger
         </Button>
       </DropdownTrigger>
@@ -400,7 +400,7 @@ const WithDescriptionTemplate = ({color, variant, disableAnimation, ...args}) =>
   return (
     <Dropdown {...args} disableAnimation={disableAnimation}>
       <DropdownTrigger>
-        <Button color="secondary" disableAnimation={disableAnimation} variant="flat">
+        <Button color="secondary" disableAnimation={disableAnimation} variant="solid">
           Trigger
         </Button>
       </DropdownTrigger>
@@ -450,7 +450,7 @@ const WithSectionsTemplate = ({color, variant, disableAnimation, ...args}) => {
   return (
     <Dropdown {...args} disableAnimation={disableAnimation}>
       <DropdownTrigger>
-        <Button color="secondary" disableAnimation={disableAnimation} variant="flat">
+        <Button color="secondary" disableAnimation={disableAnimation} variant="solid">
           Trigger
         </Button>
       </DropdownTrigger>

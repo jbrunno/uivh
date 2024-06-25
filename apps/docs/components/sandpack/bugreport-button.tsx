@@ -22,7 +22,7 @@ export const BugReportButton = () => {
       placement="top"
       radius="md"
     >
-      <Button isIconOnly size="sm" title="Report a bug" variant="light" onPress={handlePress}>
+      <Button isIconOnly size="sm" title="Report a bug" variant="ghost" onPress={handlePress}>
         <BugIcon className="text-white dark:text-zinc-500" height={16} width={16} />
       </Button>
     </Tooltip>

@@ -92,7 +92,7 @@ const LoadedStateTemplate = (args: SkeletonProps) => {
         className="max-w-[200px]"
         color="secondary"
         size="sm"
-        variant="flat"
+        variant="solid"
         onPress={toggleLoad}
       >
         {isLoaded ? "Show" : "Hide"} Skeleton

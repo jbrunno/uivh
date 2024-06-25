@@ -85,14 +85,14 @@ export const themeColorsLight: ThemeColors = {
     DEFAULT: common.zinc[300],
   },
   primary: {
+    ...common.green,
+    foreground: readableColor(common.green[500]),
+    DEFAULT: common.green[500],
+  },
+  secondary: {
     ...common.blue,
     foreground: readableColor(common.blue[500]),
     DEFAULT: common.blue[500],
-  },
-  secondary: {
-    ...common.purple,
-    foreground: readableColor(common.purple[500]),
-    DEFAULT: common.purple[500],
   },
   success: {
     ...common.green,
@@ -119,14 +119,14 @@ export const themeColorsDark: ThemeColors = {
     DEFAULT: common.zinc[700],
   },
   primary: {
-    ...swapColorValues(common.blue),
-    foreground: readableColor(common.blue[500]),
-    DEFAULT: common.blue[500],
+    ...swapColorValues(common.green),
+    foreground: readableColor(common.green[500]),
+    DEFAULT: common.green[500],
   },
   secondary: {
-    ...swapColorValues(common.purple),
-    foreground: readableColor(common.purple[400]),
-    DEFAULT: common.purple[400],
+    ...swapColorValues(common.blue),
+    foreground: readableColor(common.blue[400]),
+    DEFAULT: common.blue[400],
   },
   success: {
     ...swapColorValues(common.green),

@@ -135,7 +135,7 @@ const Template = (args: NavbarProps) => {
             <Link href="#">Login</Link>
           </NavbarItem>
           <NavbarItem>
-            <Button as={Link} color="primary" href="#" variant="flat">
+            <Button as={Link} color="primary" href="#" variant="solid">
               Sign Up
             </Button>
           </NavbarItem>
@@ -206,7 +206,7 @@ const WithMenuTemplate = (args: NavbarProps) => {
             <Link href="#">Login</Link>
           </NavbarItem>
           <NavbarItem>
-            <Button as={Link} color="primary" href="#" variant="flat">
+            <Button as={Link} color="primary" href="#" variant="solid">
               Sign Up
             </Button>
           </NavbarItem>
@@ -253,7 +253,7 @@ const WithDropdownTemplate = (args: NavbarProps) => {
           <Dropdown>
             <NavbarItem>
               <DropdownTrigger>
-                <Button endContent={icons.chevron} radius="full" variant="light">
+                <Button endContent={icons.chevron} radius="lg" variant="ghost">
                   Features
                 </Button>
               </DropdownTrigger>
@@ -336,7 +336,7 @@ const WithDropdownTemplate = (args: NavbarProps) => {
             <Link href="#">Login</Link>
           </NavbarItem>
           <NavbarItem>
-            <Button as={Link} color="primary" href="#" variant="flat">
+            <Button as={Link} color="primary" href="#" variant="solid">
               Sign Up
             </Button>
           </NavbarItem>

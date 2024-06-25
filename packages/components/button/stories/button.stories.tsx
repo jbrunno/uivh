@@ -13,7 +13,7 @@ export default {
       control: {
         type: "select",
       },
-      options: ["solid", "bordered", "light", "flat", "faded", "shadow", "ghost"],
+      options: ["solid", "ghost"],
     },
     color: {
       control: {
@@ -25,7 +25,7 @@ export default {
       control: {
         type: "select",
       },
-      options: ["sm", "md", "lg"],
+      options: ["sm", "md"],
     },
     spinnerPlacement: {
       control: {
@@ -42,7 +42,7 @@ export default {
       control: {
         type: "select",
       },
-      options: ["none", "sm", "md", "lg", "full"],
+      options: ["sm", "md", "lg"],
     },
     isDisabled: {
       control: {

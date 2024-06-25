@@ -112,12 +112,12 @@ const defaultProps = {
 const DelayTemplate = (args: TooltipProps) => (
   <div className="flex gap-2">
     <Tooltip {...args} content="Tooltip 1" delay={1000}>
-      <Button color="success" variant="faded">
+      <Button color="success" variant="solid">
         Delay Open (1000ms)
       </Button>
     </Tooltip>
     <Tooltip {...args} closeDelay={2000} content="Tooltip 2">
-      <Button color="success" variant="faded">
+      <Button color="success" variant="solid">
         Delay Close (2000ms)
       </Button>
     </Tooltip>
@@ -140,17 +140,17 @@ const OpenChangeTemplate = (args: TooltipProps) => {
 const OffsetTemplate = (args: TooltipProps) => (
   <div className="flex gap-2">
     <Tooltip {...args} content="Tooltip 1">
-      <Button color="secondary" variant="faded">
+      <Button color="secondary" variant="solid">
         Default offset (7)
       </Button>
     </Tooltip>
     <Tooltip {...args} content="Tooltip 2" offset={15}>
-      <Button color="secondary" variant="faded">
+      <Button color="secondary" variant="solid">
         15 offset
       </Button>
     </Tooltip>
     <Tooltip {...args} content="Tooltip 3" offset={-7}>
-      <Button color="secondary" variant="faded">
+      <Button color="secondary" variant="solid">
         -7 offset
       </Button>
     </Tooltip>
@@ -172,73 +172,73 @@ const PlacementsTemplate = (args: TooltipProps) => {
   return (
     <div className="inline-grid grid-cols-3 gap-4">
       <Tooltip {...args} content="Top Start" placement="top-start">
-        <Button color="primary" variant="flat">
+        <Button color="primary" variant="solid">
           Top Start
         </Button>
       </Tooltip>
 
       <Tooltip {...args} content="Top">
-        <Button color="primary" variant="flat">
+        <Button color="primary" variant="solid">
           Top
         </Button>
       </Tooltip>
 
       <Tooltip {...args} content="Top End" placement="top-end">
-        <Button color="primary" variant="flat">
+        <Button color="primary" variant="solid">
           Top End
         </Button>
       </Tooltip>
 
       <Tooltip {...args} content="Bottom Start" placement="bottom-start">
-        <Button color="primary" variant="flat">
+        <Button color="primary" variant="solid">
           Bottom Start
         </Button>
       </Tooltip>
 
       <Tooltip {...args} content="Bottom" placement="bottom">
-        <Button color="primary" variant="flat">
+        <Button color="primary" variant="solid">
           Bottom
         </Button>
       </Tooltip>
 
       <Tooltip {...args} content="Bottom End" placement="bottom-end">
-        <Button color="primary" variant="flat">
+        <Button color="primary" variant="solid">
           Bottom End
         </Button>
       </Tooltip>
 
       <Tooltip {...args} content="Right Start" placement="right-start">
-        <Button color="primary" variant="flat">
+        <Button color="primary" variant="solid">
           Right Start
         </Button>
       </Tooltip>
 
       <Tooltip {...args} content="Right" placement="right">
-        <Button color="primary" variant="flat">
+        <Button color="primary" variant="solid">
           Right
         </Button>
       </Tooltip>
 
       <Tooltip {...args} content="Right End" placement="right-end">
-        <Button color="primary" variant="flat">
+        <Button color="primary" variant="solid">
           Right End
         </Button>
       </Tooltip>
 
       <Tooltip {...args} content="Left Start" placement="left-start">
-        <Button color="primary" variant="flat">
+        <Button color="primary" variant="solid">
           Left Start
         </Button>
       </Tooltip>
 
       <Tooltip {...args} content="Left" placement="left">
-        <Button color="primary" variant="flat">
+        <Button color="primary" variant="solid">
           Left
         </Button>
       </Tooltip>
 
       <Tooltip {...args} content="Left End" placement="left-end">
-        <Button color="primary" variant="flat">
+        <Button color="primary" variant="solid">
           Left End
         </Button>
       </Tooltip>
