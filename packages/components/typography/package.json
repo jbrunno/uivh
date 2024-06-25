@@ -1,0 +1,45 @@
+{
+  "name": "@vhsys-ui/typography",
+  "version": "0.0.38",
+  "description": "This component allows you to write text on a page",
+  "keywords": [
+    "typography"
+  ],
+
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+
+    "directory": "packages/components/typography"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "dev": "yarn build:fast -- --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "build:fast": "tsup src",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "dependencies": {
+    "@vhsys-ui/shared-utils": "workspace:*",
+    "@vhsys-ui/shared-icons": "workspace:*",
+    "@vhsys-ui/react-utils": "workspace:*",
+    "@vhsys-ui/system": "workspace:*",
+    "@vhsys-ui/theme": "workspace:*",
+    "@react-aria/utils": "^3.19.0",
+    "@react-aria/focus": "^3.14.0"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0",
+    "react": "^18.0.0"
+  },
+  "clean-package": "../../../clean-package.config.json"
+}

@@ -1,4 +1,4 @@
-export const zinc = {
+export const neutral = {
   "50": "#FFFFFF",
   "100": "#FFFFFF",
   "200": "#F5F5F5",

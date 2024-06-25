@@ -1256,6 +1256,31 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
 
+  packages/components/grid:
+    dependencies:
+      '@vhsys-ui/react-utils':
+        specifier: workspace:*
+        version: link:../../utilities/react-utils
+      '@vhsys-ui/shared-utils':
+        specifier: workspace:*
+        version: link:../../utilities/shared-utils
+      '@vhsys-ui/system-rsc':
+        specifier: workspace:*
+        version: link:../../core/system-rsc
+      '@vhsys-ui/theme':
+        specifier: workspace:*
+        version: link:../../core/theme
+    devDependencies:
+      '@vhsys-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../utilities/shared-icons
+      clean-package:
+        specifier: 2.2.0
+        version: 2.2.0
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+
   packages/components/image:
     dependencies:
       '@vhsys-ui/react-utils':
@@ -1316,6 +1341,9 @@ importers:
       '@vhsys-ui/shared-utils':
         specifier: workspace:*
         version: link:../../utilities/shared-utils
+      dayjs:
+        specifier: ^1.11.11
+        version: 1.11.11
       react-textarea-autosize:
         specifier: ^8.5.2
         version: 8.5.3(@types/react@18.2.8)(react@18.2.0)
@@ -2542,6 +2570,37 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+
+  packages/components/typography:
+    dependencies:
+      '@react-aria/focus':
+        specifier: ^3.14.0
+        version: 3.14.3(react@18.2.0)
+      '@react-aria/utils':
+        specifier: ^3.19.0
+        version: 3.21.1(react@18.2.0)
+      '@vhsys-ui/react-utils':
+        specifier: workspace:*
+        version: link:../../utilities/react-utils
+      '@vhsys-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../utilities/shared-icons
+      '@vhsys-ui/shared-utils':
+        specifier: workspace:*
+        version: link:../../utilities/shared-utils
+      '@vhsys-ui/system':
+        specifier: workspace:*
+        version: link:../../core/system
+      '@vhsys-ui/theme':
+        specifier: workspace:*
+        version: link:../../core/theme
+    devDependencies:
+      clean-package:
+        specifier: 2.2.0
+        version: 2.2.0
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
 
   packages/components/user:
     dependencies:
@@ -5635,6 +5694,10 @@ packages:
     peerDependencies:
       '@effect-ts/otel-node': '*'
     peerDependenciesMeta:
+      '@effect-ts/core':
+        optional: true
+      '@effect-ts/otel':
+        optional: true
       '@effect-ts/otel-node':
         optional: true
     dependencies:
@@ -14614,6 +14677,10 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.2
 
+  /dayjs@1.11.11:
+    resolution: {integrity: sha512-okzr3f11N6WuqYtZSvm+F776mB41wRZMhKP+hc34YdW+KmtYYK9iqvHSwo2k9FEH3fhGXvOPV6yz2IcSrfRUDg==}
+    dev: false
+
   /debug@2.6.9(supports-color@6.1.0):
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     peerDependencies:
@@ -21974,6 +22041,9 @@ packages:
     resolution: {integrity: sha512-wRvsK9v12Nt2/EIjLp/uvxd3UeRSN9DRoSofDn21Ot+rEw4e98ODvbdSHi6dYr82s4oo6mF823ACmOp1hXd4wg==}
     engines: {node: '>= 12.0.0'}
     hasBin: true
+    peerDependenciesMeta:
+      '@parcel/core':
+        optional: true
     dependencies:
       '@parcel/config-default': 2.10.2(@parcel/core@2.10.2)(typescript@4.9.5)
       '@parcel/core': 2.10.2

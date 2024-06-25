@@ -2,6 +2,7 @@ const withContentlayer = require("next-contentlayer").withContentlayer;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   transpilePackages: ["@vhsys-ui/react", "@vhsys-ui/theme"],
   swcMinify: true,
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.

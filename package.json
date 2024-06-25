@@ -8,7 +8,7 @@
     "url": "https://git@git.vhsys.com.br:front/frontend-core.git"
   },
   "scripts": {
-    "dev": "pnpm sb && pnpm dev:docs",
+    "dev": "pnpm sb",
     "build": "turbo build --filter=!@vhsys-ui/docs --filter=!@vhsys-ui/storybook",
     "build:fast": "turbo build:fast --filter=!@vhsys-ui/docs --filter=!@vhsys-ui/storybook",
     "dev:docs": "turbo dev --filter=@vhsys-ui/docs",

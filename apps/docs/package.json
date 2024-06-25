@@ -6,6 +6,8 @@
     "dev": "rimraf .contentlayer && concurrently \"contentlayer dev\" \"next dev\"",
     "build": "contentlayer build && next build",
     "build:analyze": "ANALYZE=true next build",
+    "build:export": "next build && next export",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "contentlayer build && tsc --noEmit",

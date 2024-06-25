@@ -77,8 +77,7 @@ const resolveConfig = (
       if (!colorValue) return;
 
       try {
-        const parsedColor =
-          parsedColorsCache[colorValue] || Color(colorValue).hsl().round().array();
+        const parsedColor = parsedColorsCache[colorValue] || Color(colorValue).hsl().array();
 
         parsedColorsCache[colorValue] = parsedColor;
 

@@ -68,6 +68,17 @@ const ghost = {
   foreground: "border-foreground text-foreground hover:!bg-foreground",
 };
 
+const typography = {
+  neutral: "text-neutral-800",
+  "neutral-medium": "text-neutral-600",
+  "neutral-light": "text-neutral-500",
+  white: "text-background",
+  primary: "text-primary-600",
+  success: "text-success-600",
+  warning: "text-warning-600",
+  danger: "text-danger-600",
+};
+
 export const colorVariants = {
   solid,
   shadow,
@@ -76,4 +87,5 @@ export const colorVariants = {
   faded,
   light,
   ghost,
+  typography,
 };

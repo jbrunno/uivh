@@ -19,7 +19,7 @@ export const HomeLayout = () => {
             className={subtitle({class: "md:w-full text-center flex justify-center items-center"})}
           >
             Bem vindo ao design system da Vhsys. Aqui você encontra a docuemntação e exemplos de uso
-            de todos os componentes do vhsys.
+            de todos os componentes.
           </p>
           <Spacer y={12} />
           <FeaturesGrid

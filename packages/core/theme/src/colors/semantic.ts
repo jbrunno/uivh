@@ -13,7 +13,7 @@ const base: SemanticBaseColors = {
     },
     foreground: {
       ...common.zinc,
-      DEFAULT: "#11181C",
+      DEFAULT: "#0E2538",
     },
     divider: {
       DEFAULT: "rgba(17, 17, 17, 0.15)",
@@ -30,7 +30,7 @@ const base: SemanticBaseColors = {
     },
     content2: {
       DEFAULT: common.zinc[100],
-      foreground: common.zinc[800],
+      foreground: common.zinc[700],
     },
     content3: {
       DEFAULT: common.zinc[200],
@@ -59,11 +59,11 @@ const base: SemanticBaseColors = {
       DEFAULT: "rgba(255, 255, 255, 0.15)",
     },
     content1: {
-      DEFAULT: common.zinc[900],
+      DEFAULT: common.zinc[700],
       foreground: common.zinc[50],
     },
     content2: {
-      DEFAULT: common.zinc[800],
+      DEFAULT: common.zinc[600],
       foreground: common.zinc[100],
     },
     content3: {

@@ -92,6 +92,12 @@ const SwatchSet = ({colors, isSematic = false}: SwatchSetProps) => (
 export default {
   title: "Foundations/Colors",
   component: SwatchSet,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/proto/TNGKwzEFrJcVbfR40fJnyp/TicTac-Design-System?node-id=9392-26328&t=br0sKzYz5IAqmj72-1",
+    },
+  },
   argTypes: {
     isSematic: {
       control: false,
@@ -113,6 +119,10 @@ export const CommonColors = {
         items: getCommonItems([commonColors.white, commonColors.black]),
       },
       {
+        title: "Neutrals",
+        items: getCommonItems([...Object.values(commonColors.neutral)]),
+      },
+      {
         title: "Blue",
         items: getCommonItems([...Object.values(commonColors.blue)]),
       },
@@ -129,16 +139,8 @@ export const CommonColors = {
         items: getCommonItems([...Object.values(commonColors.red)]),
       },
       {
-        title: "Pink",
-        items: getCommonItems([...Object.values(commonColors.pink)]),
-      },
-      {
         title: "Yellow",
         items: getCommonItems([...Object.values(commonColors.yellow)]),
-      },
-      {
-        title: "Cyan",
-        items: getCommonItems([...Object.values(commonColors.cyan)]),
       },
     ],
   },
@@ -237,24 +239,19 @@ export const SemanticColors = {
         title: "Default",
         items: [
           {
-            color: "default-50",
-            className: "bg-default-50",
-            textClassName: "text-default-900",
-          },
-          {
             color: "default-100",
             className: "bg-default-100",
-            textClassName: "text-default-900",
+            textClassName: "text-default-800",
           },
           {
             color: "default-200",
             className: "bg-default-200",
-            textClassName: "text-default-800",
+            textClassName: "text-default-700",
           },
           {
             color: "default-300",
             className: "bg-default-300",
-            textClassName: "text-default-800",
+            textClassName: "text-default-600",
           },
           {
             color: "default-400",
@@ -264,12 +261,12 @@ export const SemanticColors = {
           {
             color: "default-500",
             className: "bg-default-500",
-            textClassName: "text-default-foreground",
+            textClassName: "text-default-800",
           },
           {
             color: "default-600",
             className: "bg-default-600",
-            textClassName: "text-default-50",
+            textClassName: "text-default-foreground",
           },
           {
             color: "default-700",
@@ -281,25 +278,15 @@ export const SemanticColors = {
             className: "bg-default-800",
             textClassName: "text-default-100",
           },
-          {
-            color: "default-900",
-            className: "bg-default-900",
-            textClassName: "text-default-100",
-          },
         ],
       },
       {
         title: "Primary",
         items: [
           {
-            color: "primary-50",
-            className: "bg-primary-50",
-            textClassName: "text-primary-900",
-          },
-          {
             color: "primary-100",
             className: "bg-primary-100",
-            textClassName: "text-primary-900",
+            textClassName: "text-primary-800",
           },
           {
             color: "primary-200",
@@ -319,12 +306,12 @@ export const SemanticColors = {
           {
             color: "primary-500",
             className: "bg-primary-500",
-            textClassName: "text-primary-foreground",
+            textClassName: "text-primary-800",
           },
           {
             color: "primary-600",
             className: "bg-primary-600",
-            textClassName: "text-primary-50",
+            textClassName: "text-primary-foreground",
           },
           {
             color: "primary-700",
@@ -336,25 +323,15 @@ export const SemanticColors = {
             className: "bg-primary-800",
             textClassName: "text-primary-100",
           },
-          {
-            color: "primary-900",
-            className: "bg-primary-900",
-            textClassName: "text-primary-100",
-          },
         ],
       },
       {
         title: "Secondary",
         items: [
           {
-            color: "secondary-50",
-            className: "bg-secondary-50",
-            textClassName: "text-secondary-900",
-          },
-          {
             color: "secondary-100",
             className: "bg-secondary-100",
-            textClassName: "text-secondary-900",
+            textClassName: "text-secondary-800",
           },
           {
             color: "secondary-200",
@@ -364,22 +341,22 @@ export const SemanticColors = {
           {
             color: "secondary-300",
             className: "bg-secondary-300",
-            textClassName: "text-secondary-800",
+            textClassName: "text-secondary-700",
           },
           {
             color: "secondary-400",
             className: "bg-secondary-400",
-            textClassName: "text-secondary-800",
+            textClassName: "text-secondary-700",
           },
           {
             color: "secondary-500",
             className: "bg-secondary-500",
-            textClassName: "text-secondary-foreground",
+            textClassName: "text-secondary-700",
           },
           {
             color: "secondary-600",
             className: "bg-secondary-600",
-            textClassName: "text-secondary-50",
+            textClassName: "text-secondary-foreground",
           },
           {
             color: "secondary-700",
@@ -389,12 +366,7 @@ export const SemanticColors = {
           {
             color: "secondary-800",
             className: "bg-secondary-800",
-            textClassName: "text-secondary-100",
-          },
-          {
-            color: "secondary-900",
-            className: "bg-secondary-900",
-            textClassName: "text-secondary-100",
+            textClassName: "text-secondary-200",
           },
         ],
       },
@@ -402,14 +374,9 @@ export const SemanticColors = {
         title: "Success",
         items: [
           {
-            color: "success-50",
-            className: "bg-success-50",
-            textClassName: "text-success-900",
-          },
-          {
             color: "success-100",
             className: "bg-success-100",
-            textClassName: "text-success-900",
+            textClassName: "text-success-800",
           },
           {
             color: "success-200",
@@ -429,12 +396,12 @@ export const SemanticColors = {
           {
             color: "success-500",
             className: "bg-success-500",
-            textClassName: "text-success-foreground",
+            textClassName: "text-success-800",
           },
           {
             color: "success-600",
             className: "bg-success-600",
-            textClassName: "text-success-50",
+            textClassName: "text-success-foreground",
           },
           {
             color: "success-700",
@@ -446,25 +413,15 @@ export const SemanticColors = {
             className: "bg-success-800",
             textClassName: "text-success-100",
           },
-          {
-            color: "success-900",
-            className: "bg-success-900",
-            textClassName: "text-success-100",
-          },
         ],
       },
       {
         title: "Warning",
         items: [
           {
-            color: "warning-50",
-            className: "bg-warning-50",
-            textClassName: "text-warning-900",
-          },
-          {
             color: "warning-100",
             className: "bg-warning-100",
-            textClassName: "text-warning-900",
+            textClassName: "text-warning-800",
           },
           {
             color: "warning-200",
@@ -484,12 +441,12 @@ export const SemanticColors = {
           {
             color: "warning-500",
             className: "bg-warning-500",
-            textClassName: "text-warning-foreground",
+            textClassName: "text-warning-800",
           },
           {
             color: "warning-600",
             className: "bg-warning-600",
-            textClassName: "text-warning-50",
+            textClassName: "text-warning-foreground",
           },
           {
             color: "warning-700",
@@ -501,25 +458,15 @@ export const SemanticColors = {
             className: "bg-warning-800",
             textClassName: "text-warning-100",
           },
-          {
-            color: "warning-900",
-            className: "bg-warning-900",
-            textClassName: "text-warning-100",
-          },
         ],
       },
       {
         title: "Danger",
         items: [
           {
-            color: "danger-50",
-            className: "bg-danger-50",
-            textClassName: "text-danger-900",
-          },
-          {
             color: "danger-100",
             className: "bg-danger-100",
-            textClassName: "text-danger-900",
+            textClassName: "text-danger-800",
           },
           {
             color: "danger-200",
@@ -539,12 +486,12 @@ export const SemanticColors = {
           {
             color: "danger-500",
             className: "bg-danger-500",
-            textClassName: "text-danger-foreground",
+            textClassName: "text-danger-800",
           },
           {
             color: "danger-600",
             className: "bg-danger-600",
-            textClassName: "text-danger-50",
+            textClassName: "text-danger-foreground",
           },
           {
             color: "danger-700",
@@ -554,11 +501,6 @@ export const SemanticColors = {
           {
             color: "danger-800",
             className: "bg-danger-800",
-            textClassName: "text-danger-100",
-          },
-          {
-            color: "danger-900",
-            className: "bg-danger-900",
             textClassName: "text-danger-100",
           },
         ],
